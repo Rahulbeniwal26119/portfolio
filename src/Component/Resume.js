@@ -6,14 +6,15 @@ class Resume extends React.Component {
             var skillmessage = this.props.data.skillmessage;
             var education = this.props.data.education.map(function (education) {
                 return <div key={
-                    education.school
+                    education.Collage
                 }>
                     <h3> {
-                        education.school
+                        
+                        education.degree
                     } </h3>
                     <p className="info">
                         {
-                        education.degree
+                            education.Collage
                     }
                         <span>
                             &bull;
