@@ -36,6 +36,18 @@
                 "degree": "Bachelor's Degree , Computer Science",
                 "graduate": "May 2022",
                 "description": "Current C.G.P.A. is 8.87"
+            },
+            {
+                "Collage": "S.S.R. Public School , Nandgoan ,KosiKalan",
+                "degree": "Intermediate  , CBSE Board",
+                "graduate": "2017 - 2018",
+                "description": "85% (P.C.M.)"
+            },
+            {
+                "Collage": "Anguri Devi Public School ,KosiKalan",
+                "degree": "High School , CBSE Board",
+                "graduate": "2013 - 2015",
+                "description": "9.4 C.G.P.A."
             }
         ],
         "work" : [
@@ -66,6 +78,10 @@
             {
                 "name": "Bootstrap",
                 "level": "85%"
+            },
+            {
+                "name" : "PHP",
+                "level": "89%"
             }
         ]
     },
