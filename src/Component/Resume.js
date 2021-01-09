@@ -12,6 +12,7 @@ class Resume extends React.Component {
                         
                         education.degree
                     } </h3>
+                    <div className="info">
                     <p className="info">
                         {
                             education.Collage
@@ -24,9 +25,11 @@ class Resume extends React.Component {
                             education.graduate
                         }</em>
                     </p>
-                    <p>{
+                    <p className="date">{
                         education.description
                     }</p>
+                    </div>
+
                 </div>
             })
             // var work = this.props.data.work.map(function(work){
@@ -40,13 +43,12 @@ class Resume extends React.Component {
                 return <li key={
                     skills.name
                 }>
-                    <span style={
-                            {width: skills.level}
-                        }
-                        className={className}></span>
-                    <em>{
+                    <span style={{width: skills.level}} className={className}>
+                    <em style={{marginLeft : "10vw"}}>{
                         skills.name
                     }</em>
+                    </span>
+
                 </li>
             })
         }
@@ -82,7 +84,7 @@ class Resume extends React.Component {
                         </h1>
                     </div>
                     <div className="nine columns main-col">
-                        <p>{skillmessage}</p>
+                        <p className="info">{skillmessage}</p>
                         <div className="bars">
                             <ul className="skills">
                                 {skills} </ul>

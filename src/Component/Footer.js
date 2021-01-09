@@ -19,9 +19,6 @@ class Footer extends React.Component{
                         <ul className="social-links">
                             {networks}
                         </ul>
-                        <ul>
-                             #cleaverprogrammerfollower
-                        </ul>
                         <ul className="copyright">
                             <li>&copy;  Credit goes to Tim Baker and Me</li>
                         </ul>
