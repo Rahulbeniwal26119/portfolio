@@ -1,0 +1,97 @@
+{
+    "main": {
+        "name": "Rahul Beniwal",
+        "occupation": "Fresher, Looking for full stack development Job",
+        "image": "Rahul.jpg",
+        "description" : "Full Stack Developer and Student at UpGrad",
+        "bio": "My name is Rahul Beniwal , I'm a Full Stack ReactJS Developer. Currently I'm looking opportunity.",
+        "email": "rahulbeniwal.dev@gmail.com",
+        "phone": "+91 6398486322",
+        "resumeDownload" : "#",
+        "address": {
+            "city": "Kosi Kalan",
+            "state": "Uttar Pradesh",
+            "pin": "281403"
+        },
+        "website": "",
+        "resumedownload": "",
+        "social": [
+            {
+                "name": "linkedin",
+                "url": "https://www.linkedin.com/in/rahulbeniwal26119/",
+                "className": "fa fa-linkedin"
+            },
+            {
+                "name": "github",
+                "url": "https://github.com/Rahulbeniwal26119/",
+                "className": "fa fa-github"
+            }
+        ]
+    },
+    "resume": {
+        "skillmessage" : "I am very quick to develop new skills.",
+        "education": [
+            {
+                "Collage": "Sanskriti University - Chhata (Mathura)",
+                "degree": "Bachelor's Degree , Computer Science",
+                "graduate": "May 2022",
+                "description": "Current C.G.P.A. is 8.87"
+            }
+        ],
+        "work" : [
+            {
+                "company": "",
+                "title": "",
+                "years": "",
+                "description": ""
+            }
+        ],
+        "skills": [
+            {
+                "name": "ReactJS",
+                "level": "100%"
+            },
+            {
+                "name": "Electron",
+                "level": "80%"
+            },
+            {
+                "name": "JavaScript",
+                "level": "100%"
+            },
+            {
+                "name": "Git",
+                "level": "75%"
+            },
+            {
+                "name": "Bootstrap",
+                "level": "85%"
+            }
+        ]
+    },
+    "portfolio": {
+        "projects": [
+            {
+                "title": "Amazon Clone Using React",
+                "Category" : "React Clones",
+                "image" : "amazon.jpeg",
+                "url" : ""
+            },
+            {
+                "title": "Youtube  Clone Using React",
+                "Category" : "React Clones",
+                "image" : "youtube.jpg",
+                "url" : ""
+            }
+
+        ]
+    },
+    "testimonials": {
+        "testimonials" : [
+            {
+                "user" : "Dheeraj Chaudhary",
+                "text" : "  I am really impressed by Rahul's work , i was stunned by his will power to complete my restorant website. Best wishes him for his coming future."
+            }
+        ]
+    }
+}
