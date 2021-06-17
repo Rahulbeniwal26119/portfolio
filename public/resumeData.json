@@ -1,13 +1,13 @@
 {
     "main": {
         "name": "Rahul Beniwal",
-        "occupation": "Fresher, Looking for full stack development Job",
+        "occupation": "Fresher, Looking for Full Stack development Job",
         "image": "Rahul.jpg",
-        "description" : "Full Stack Developer and Student at UpGrad",
-        "bio": "My name is Rahul Beniwal , I'm a Full Stack ReactJS Developer. Currently I'm looking opportunity.",
-        "email": "rahulbeniwal.dev@gmail.com",
+        "description" : "Upgrad Certified Full Stack Developer ",
+        "bio": "I am  Rahul Beniwal , Full Stack ReactJS Developer, Looking for  opportunity and contributing on GitHub.",
+        "email": "rahulbeniwal26119@gmail.com",
         "phone": "+91 6398486322",
-        "resumeDownload" : "#",
+        "resumeDownload" : "https://github.com/Rahulbeniwal26119/Rahulbeniwal26119/blob/main/Sanskriti_FSD_RahulBeniwal.pdf",
         "address": {
             "city": "Kosi Kalan",
             "state": "Uttar Pradesh",
@@ -35,19 +35,19 @@
                 "Collage": "Sanskriti University - Chhata (Mathura)",
                 "degree": "Bachelor's Degree , Computer Science",
                 "graduate": "May 2022",
-                "description": "Current C.G.P.A. is 8.87"
+                "description": "Current C.G.P.A.  8.87"
             },
             {
                 "Collage": "S.S.R. Public School , Nandgoan ,KosiKalan",
                 "degree": "Intermediate  , CBSE Board",
                 "graduate": "2017 - 2018",
-                "description": "85% (P.C.M.)"
+                "description": "85% (PCM)"
             },
             {
                 "Collage": "Anguri Devi Public School ,KosiKalan",
                 "degree": "High School , CBSE Board",
                 "graduate": "2013 - 2015",
-                "description": "9.4 C.G.P.A."
+                "description": "9.4 CGPA"
             }
         ],
         "work" : [
@@ -60,17 +60,34 @@
         ],
         "skills": [
             {
-                "name": "ReactJS",
-                "level": "100%"
+                "name" : "C/C++",
+                "level" : "80%"
             },
             {
-                "name": "Electron",
-                "level": "80%"
+                "name" : "Java",
+                "level": "85%"
             },
             {
                 "name": "JavaScript",
-                "level": "100%"
+                "level": "90%"
             },
+            {
+                "name": "ReactJS",
+                "level": "90%"
+            },
+            {
+                "name": "Redux",
+                "level": "80%"
+            },
+            {
+                "name" : "Spring Boot",
+                "level": "80%"
+            },
+            {
+                "name": "Electron",
+                "level": "70%"
+            },
+
             {
                 "name": "Git",
                 "level": "75%"
@@ -78,10 +95,6 @@
             {
                 "name": "Bootstrap",
                 "level": "85%"
-            },
-            {
-                "name" : "PHP",
-                "level": "89%"
             }
         ]
     },
@@ -91,15 +104,32 @@
                 "title": "Amazon Clone Using React",
                 "Category" : "React Clones",
                 "image" : "amazon.jpeg",
-                "url" : ""
+                "url" : "https://serene-borg-fc3c10.netlify.app/"
             },
             {
-                "title": "Youtube  Clone Using React",
+                "title": "Google Clone",
                 "Category" : "React Clones",
-                "image" : "youtube.jpg",
-                "url" : ""
+                "image" : "Google.png",
+                "url" : "https://clone-7fca3.web.app/"
+            },
+            {
+                "title": "Covid 19 Tracker",
+                "Category" : "React Clones",
+                "image" : "covid.png",
+                "url" : "https://awesome-wilson-7e01e1.netlify.app/"
+            },
+            {
+                "title": "News App",
+                "Category" : "React Clones",
+                "image" : "news.png",
+                "url" : "https://eloquent-carson-45027f.netlify.app/"
+            },
+            {
+                "title": "Alien Shooter",
+                "Category" : "Python",
+                "image" : "AlienShooter.png",
+                "url" : "https://github.com/Rahulbeniwal26119/AlienShooter_pygame"
             }
-
         ]
     },
     "testimonials": {
