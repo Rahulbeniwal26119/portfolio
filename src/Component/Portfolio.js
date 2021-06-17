@@ -23,7 +23,7 @@ class Portfolio extends Component {
                                     src={portfolioImage}/>
                                 <div className="overlay">
                                     <div className="portfolio-item-meta">
-                                        <h5 style={{color : "magenta"}}>{
+                                        <h5 style={{color : "lime"}}>{
                                             projects.title
                                         }</h5>
                                         <p style={{color : "magenta"}}>{
