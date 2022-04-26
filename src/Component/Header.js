@@ -7,7 +7,7 @@ class Header extends React.Component {
             var name = this.props.data.name;
             var occupation = this.props.data.occupation;
             var description = this.props.data.description;
-            var city = this.props.data.address.city;
+            // var city = this.props.data.address.city;
             var network = this.props.data.social.map((network) => {
                 return <li key={
                     network.name
@@ -52,7 +52,7 @@ class Header extends React.Component {
                 <div className="row banner">
                     <div className="banner-text">
                         <h1 className="responsive-headline">I'm {name}.</h1>
-                        <h3>I'm {city} based <span>{description}</span>. {occupation}</h3>
+                        <h3><span>{description}</span>. {occupation}</h3>
                         <hr/>
                         <ul className="social">
                             {network}

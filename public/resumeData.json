@@ -1,13 +1,13 @@
 {
     "main": {
         "name": "Rahul Beniwal",
-        "occupation": "Fresher, Looking for Full Stack development Job",
+        "occupation": "Programmer, Backend Developer",
         "image": "Rahul.jpg",
-        "description" : "Upgrad Certified Full Stack Developer ",
-        "bio": "I am  Rahul Beniwal , Full Stack ReactJS Developer, Looking for  opportunity and contributing on GitHub.",
+        "description" : "",
+        "bio": "Hi, I am Rahul Beniwal , Full Stack Django Developer, Nice to e-meet you.",
         "email": "rahulbeniwal26119@gmail.com",
         "phone": "+91 6398486322",
-        "resumeDownload" : "https://github.com/Rahulbeniwal26119/Rahulbeniwal26119/blob/main/Sanskriti_FSD_RahulBeniwal.pdf",
+        "resumeDownload" : "https://github.com/Rahulbeniwal26119/Rahulbeniwal26119/blob/main/Rahul_Beniwal_Resume.pdf",
         "address": {
             "city": "Kosi Kalan",
             "state": "Uttar Pradesh",
@@ -29,13 +29,13 @@
         ]
     },
     "resume": {
-        "skillmessage" : "I am very quick to develop new skills.",
+        "skillmessage" : "Skills are like fuel to me and new skills are like hydrogen fuel 😊.",
         "education": [
             {
                 "Collage": "Sanskriti University - Chhata (Mathura)",
                 "degree": "Bachelor's Degree , Computer Science",
                 "graduate": "May 2022",
-                "description": "Current C.G.P.A.  8.87"
+                "description": "Current C.G.P.A.  8.83"
             },
             {
                 "Collage": "S.S.R. Public School , Nandgoan ,KosiKalan",
@@ -52,49 +52,49 @@
         ],
         "work" : [
             {
-                "company": "",
-                "title": "",
-                "years": "",
-                "description": ""
+                "company": "LendenClub",
+                "title": "Software Developer Intern",
+                "years": "1",
+                "description": "Creating API, fixing bugs, and improving the codebase."
             }
         ],
         "skills": [
             {
-                "name" : "C/C++",
+                "name": "Python",
+                "level": "90%"
+            },
+            {
+                "name": "Django",
+                "level": "85%"
+            },
+            {
+                "name" : "Go",
                 "level" : "80%"
             },
             {
                 "name" : "Java",
-                "level": "85%"
+                "level": "75%"
             },
             {
-                "name": "JavaScript",
-                "level": "90%"
-            },
-            {
-                "name": "ReactJS",
-                "level": "90%"
-            },
-            {
-                "name": "Redux",
-                "level": "80%"
+                "name": "React",
+                "level": "65%"
             },
             {
                 "name" : "Spring Boot",
-                "level": "80%"
+                "level": "40%"
             },
             {
-                "name": "Electron",
-                "level": "70%"
+                "name": "Postgresql and Mysql",
+                "level": "65%"
             },
 
             {
                 "name": "Git",
-                "level": "75%"
+                "level": "80%"
             },
             {
-                "name": "Bootstrap",
-                "level": "85%"
+                "name": "Linux and Tools",
+                "level": "75%"
             }
         ]
     },
@@ -129,14 +129,20 @@
                 "Category" : "Python",
                 "image" : "AlienShooter.png",
                 "url" : "https://github.com/Rahulbeniwal26119/AlienShooter_pygame"
+            },
+            {
+                "title": "Laait Interpreter",
+                "Category" : "Go",
+                "image" : "laait.png",
+                "url" : "https://github.com/Rahulbeniwal26119/laait"
             }
         ]
     },
     "testimonials": {
         "testimonials" : [
             {
-                "user" : "Dheeraj Chaudhary",
-                "text" : "  I am really impressed by Rahul's work , i was stunned by his will power to complete my restaurant website. Best wishes to  him for his coming future."
+                "user" : "Foo, Bar and Baz",
+                "text" : "😌 yet to come 😌"
             }
         ]
     }
