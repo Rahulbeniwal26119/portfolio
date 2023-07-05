@@ -36,24 +36,18 @@
                 "degree": "Bachelor's Degree , Computer Science",
                 "graduate": "May 2022",
                 "description": "Current C.G.P.A.  8.83"
-            },
-            {
-                "Collage": "S.S.R. Public School , Nandgoan ,KosiKalan",
-                "degree": "Intermediate  , CBSE Board",
-                "graduate": "2017 - 2018",
-                "description": "85% (PCM)"
-            },
-            {
-                "Collage": "Anguri Devi Public School ,KosiKalan",
-                "degree": "High School , CBSE Board",
-                "graduate": "2013 - 2015",
-                "description": "9.4 CGPA"
             }
         ],
         "work" : [
             {
+                "company": "LiveEasy (Formerly LiveEasy)",
+                "title": "Software Developer",
+                "years": "1",
+                "description": "Creating, Optimizing."
+            },
+            {
                 "company": "LendenClub",
-                "title": "Software Developer Intern",
+                "title": "Software Developer",
                 "years": "1",
                 "description": "Creating API, fixing bugs, and improving the codebase."
             }
@@ -61,35 +55,39 @@
         "skills": [
             {
                 "name": "Python",
-                "level": "90%"
+                "level": "93%"
             },
             {
                 "name": "Django",
                 "level": "85%"
             },
             {
-                "name" : "Go",
-                "level" : "80%"
+                "name" : "Java",
+                "level": "60%"
             },
             {
-                "name" : "Java",
-                "level": "75%"
+                "name" : "Go",
+                "level" : "60%"
+            },
+            {
+                "name" : "Dart",
+                "level" : "60%"
             },
             {
                 "name": "React",
-                "level": "65%"
-            },
-            {
-                "name" : "Spring Boot",
                 "level": "40%"
             },
             {
-                "name": "Postgresql and Mysql",
-                "level": "65%"
+                "name": "Postgresql",
+                "level": "80%"
             },
 
             {
                 "name": "Git",
+                "level": "80%"
+            },
+            {
+                "name": "Docker",
                 "level": "80%"
             },
             {
@@ -101,16 +99,10 @@
     "portfolio": {
         "projects": [
             {
-                "title": "Amazon Clone Using React",
-                "Category" : "React Clones",
-                "image" : "amazon.jpeg",
-                "url" : "https://serene-borg-fc3c10.netlify.app/"
-            },
-            {
-                "title": "Google Clone",
-                "Category" : "React Clones",
-                "image" : "Google.png",
-                "url" : "https://clone-7fca3.web.app/"
+                "title": "Laait Interpreter",
+                "Category" : "Go",
+                "image" : "laait.png",
+                "url" : "https://github.com/Rahulbeniwal26119/laait"
             },
             {
                 "title": "Covid 19 Tracker",
@@ -129,12 +121,6 @@
                 "Category" : "Python",
                 "image" : "AlienShooter.png",
                 "url" : "https://github.com/Rahulbeniwal26119/AlienShooter_pygame"
-            },
-            {
-                "title": "Laait Interpreter",
-                "Category" : "Go",
-                "image" : "laait.png",
-                "url" : "https://github.com/Rahulbeniwal26119/laait"
             }
         ]
     },

@@ -28,7 +28,7 @@ class Header extends React.Component {
                     <a className="mobile-btn" href="#nav-wrap" title="Show navigation">Show Navigation</a>
                     <a className="mobile-btn" href="#home" title="Hide navigation">Hide Navigation</a>
 
-                    <ul id="nav" className="nav" style={{background :  'red'}}>
+                    <ul id="nav" className="nav" style={{background :  'background: rgba(6, 12, 25, 0);'}}>
                         <li>
                             <a className="smoothscroll" href="#home">Home</a>
                         </li>
