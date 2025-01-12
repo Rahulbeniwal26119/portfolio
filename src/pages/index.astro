@@ -1,16 +1,41 @@
 ---
-
+import ReadingProgress from "../components/ReadingProgress.astro"
+import AnimatedBackground from "../components/AnimatedBackground.astro"
+import FloatingElements from "../components/FloatingElements.astro"
+import CursorEffect from "../components/CursorEffect.astro"
+import Portfolio from "../components/Portfolio.astro"
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<!doctype html>
+<html lang="en" class="dark overflow-x-hidden">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Rahul Beniwal's Portfolio" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>Rahul Beniwal</title>
+
+  </head>
+  <body class="text-gray-100 min-h-screen overflow-x-hidden">
+    <main
+      class="min-h-screen pt-14 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100"
+    >
+      <ReadingProgress />
+      <AnimatedBackground />
+      <FloatingElements />
+      <CursorEffect />
+      <div class="relative z-10 mx-auto">
+        <Portfolio />
+      </div>
+    </main>
+  </body>
 </html>
