@@ -1,0 +1,164 @@
+{
+  "hero": {
+    "title": "Rahul Beniwal",
+    "subtitle": "Software Developer II",
+    "summary": "Skilled software developer with expertise in Python, Django, and backend technologies. Experienced in building scalable web apps and handling configuration-driven projects. A quick problem solver with a solid understanding of web technologies, known for delivering efficient, reliable solutions.",
+    "contacts": {
+      "email": "rahulbeniwal26119@gmail.com",
+      "phone": "+91 6398486322"
+    },
+    "social": {
+      "github": "https://github.com/rahulbeniwal26119",
+      "linkedin": "https://www.linkedin.com/in/rahulbeniwal26119/"
+    }
+  },
+  "professionalExperience": [
+    {
+      "title": "Software Developer II",
+      "company": "LiveEasy (Formerly MoveEasy)",
+      "period": "Feb '23 – Present",
+      "location": "Ohio, United States",
+      "highlights": [
+        "Led end-to-end integration with Verizon for Internet Services",
+        "Built APIs supporting 20+ charts, 30+ graphs, and 20+ reports",
+        "Optimized database queries, reducing response time from 3 minutes to 3 seconds",
+        "Designed data models and REST APIs for Property Management Service",
+        "Achieved up to 100% faster ORM query performance",
+        "Developed robust, flexible caching utilities for Django models",
+        "Integrated multiple services including Regal, Iterable, Verse, and IBEX"
+      ],
+      "tech": [
+        "Python",
+        "Django",
+        "PostgreSQL",
+        "Celery",
+        "Redis",
+        "Docker",
+        "Pandas",
+        "XlsxWriter"
+      ]
+    },
+    {
+      "title": "Software Developer",
+      "company": "LendenClub",
+      "period": "Jul '22 – Jan '23",
+      "location": "Mumbai, Maharashtra",
+      "highlights": [
+        "Designed and implemented a JSON-configured secure proxy system for API interactions",
+        "Implemented an independent payment management service",
+        "Reduced payment failures from 60% to 20%",
+        "Enhanced system security and reliability"
+      ],
+      "tech": [
+        "Python",
+        "Django",
+        "PostgreSQL",
+        "Cryptography",
+        "Celery",
+        "Redis"
+      ]
+    },
+    {
+      "title": "Software Developer Intern",
+      "company": "LendenClub",
+      "period": "Jul '21 – Jul '22",
+      "location": "Mumbai, Maharashtra",
+      "highlights": [
+        "Developed client-facing APIs for business loan dashboards",
+        "Created scheduled jobs to synchronize systems",
+        "Contributed to core platform development"
+      ],
+      "tech": [
+        "Python",
+        "Django",
+        "PostgreSQL",
+        "Redis",
+        "Celery"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "LAAIT Programming Language",
+      "url": "https://github.com/rahulbeniwal26119/laait",
+      "description": "A lightweight interpreter featuring dynamic typing, lexical scoping, and first-class functions. Implemented in Go, it includes a recursive descent parser and tree-walk interpreter.",
+      "techTags": ["Interpreter", "Go", "Language Design"]
+    },
+    {
+      "name": "Rust Blockchain",
+      "url": "https://github.com/rahulbeniwal26119/rust-blockchain",
+      "description": "A blockchain implementation in Rust with proof-of-work consensus, focusing on core blockchain concepts and Rust's memory safety features.",
+      "techTags": ["Rust", "Blockchain", "Cryptography"]
+    },
+    {
+      "name": "K&R C Solutions",
+      "url": "https://github.com/Rahulbeniwal26119/k_-_R_ANS",
+      "description": "Implementation of solutions from the C Programming Language book (K&R), focusing on problem-solving and UNIX philosophy.",
+      "techTags": ["C", "UNIX"]
+    }
+  ],
+  "openSourceContributions": [
+    {
+      "organization": "@AnswerDotAI",
+      "description": "Fixed bugs in Utility Functions"
+    },
+    {
+      "organization": "@CRED-CLUB",
+      "description": "Fixed issues in DevOps"
+    }
+  ],
+  "skills": {
+    "Programming Languages": [
+      "Python",
+      "Go",
+      "Rust",
+      "Java",
+      "C",
+      "JavaScript"
+    ],
+    "Web Development": [
+      "Django",
+      "Celery",
+      "FastAPI",
+      "HTML5",
+      "CSS",
+      "jQuery",
+      "Astro",
+      "React",
+      "TailwindCSS"
+    ],
+    "Database Management": [
+      "PostgreSQL",
+      "Redis",
+      "MongoDB",
+      "Database Optimization"
+    ],
+    "DevOps & Cloud": [
+      "Docker",
+      "Kubernetes",
+      "Google Cloud Platform",
+      "Nginx"
+    ],
+    "Development Tools": [
+      "Git",
+      "VIM",
+      "Linux",
+      "Data Structures",
+      "Algorithms"
+    ],
+    "Core Competencies": [
+      "System Integration",
+      "Performance Optimization",
+      "Unit Testing",
+      "API Design"
+    ]
+  },
+  "education": [
+    {
+      "degree": "B.Tech (C.S.E.)",
+      "institution": "Sanskriti University",
+      "period": "Aug '18 – May '22",
+      "cgpa": "8.72"
+    }
+  ]
+}
