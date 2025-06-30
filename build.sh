@@ -8,7 +8,7 @@ NC='\033[0m'
 
 # Configuration
 BUILD_DIR="dist"
-NGINX_SITE_DIR="/var/www/takovibe.com"
+NGINX_SITE_DIR="/var/www/portfolio"
 ENV="prod"
 
 log() {
@@ -88,7 +88,7 @@ main() {
     local elapsed=$((end_time - start_time))
 
     log "Build and deployment completed in ${elapsed} seconds"
-    echo -e "${YELLOW}Site is now live at https://takovibe.com${NC}"
+    echo -e "${YELLOW}Site is now live at https://rahulbeniwal.takovibe.com${NC}"
 }
 
 # Execute with error handling
