@@ -74,12 +74,38 @@ import data from '../data.json';
         </svg>
         LinkedIn
         </a>
+        <a
+        href={data.hero?.social?.medium}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center gap-2 text-gray-300 hover:text-purple-400 transition-colors"
+        >
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path
+            d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"
+            ></path>
+        </svg>
+        Medium
+        </a>
+        <a
+        href={data.hero?.social?.blog}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center gap-2 text-gray-300 hover:text-purple-400 transition-colors"
+        >
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path
+            d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+            ></path>
+        </svg>
+        Blog
+        </a>
     </div>
     </div>
     <div class="absolute left-1/2 transform -translate-x-1/2 bottom-4">
     <div class="flex items-center gap-2">
         <div class="w-3 h-3 bg-purple-500 animate-bounce"></div>
-        <div class="text-gray-400 text-sm">Scroll to Explore</div>
+        <div class="text-gray-400 text-sm">{data.hero?.scrollText}</div>
     </div>
     </div>
 </section>
@@ -92,7 +118,7 @@ import data from '../data.json';
         <h2
         class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 mb-12"
         >
-        Professional Experience
+        {data.sectionTitles?.experience}
         </h2>
         <div class="space-y-12">
         {data.professionalExperience?.map((job, index) => (
@@ -111,13 +137,37 @@ import data from '../data.json';
                 </div>
                 <ul class="list-disc list-inside text-gray-300 mb-6 space-y-2">
                 {job.highlights?.map((highlight, idx) => (
-                    <li key={idx} class="pl-2">{highlight}</li>
+                    <li class="pl-2">{highlight}</li>
                 ))}
                 </ul>
                 <div class="flex flex-wrap gap-2">
                 {job.tech?.map((techItem, idx) => (
-                    <span key={idx} class="px-3 py-1 rounded-full bg-purple-500/10 text-sm text-purple-300 border border-purple-500/20">
+                    <span class="px-3 py-1 rounded-full bg-purple-500/10 text-sm text-purple-300 border border-purple-500/20">
                     {techItem}
+                    </span>
+                ))}
+                </div>
+            </div>
+        ))}
+        </div>
+    </section>
+
+    <section class="mb-20">
+        <h2
+        class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 mb-12"
+        >
+        {data.sectionTitles?.skills}
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {Object.entries(data.skills || {}).map(([category, skills], index) => (
+            <div class="bg-slate-800/30 rounded-lg p-6 hover:bg-slate-700/30 transition-all reveal-card">
+                <h3 class="text-lg font-medium text-purple-400 mb-4">
+                {category}
+                </h3>
+                <div class="flex flex-wrap gap-2">
+                {skills.map((skill, idx) => (
+                    <span class="px-3 py-1 rounded-full bg-slate-700/50 text-sm text-gray-300">
+                    {skill}
                     </span>
                 ))}
                 </div>
@@ -130,185 +180,154 @@ import data from '../data.json';
         <!-- Projects -->
         <section class="mb-20">
         <h2 class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 mb-12">
-            Projects
+            {data.sectionTitles?.projects}
         </h2>
         
         <div class="grid md:grid-cols-2 gap-8">
-            <!-- LAAIT Programming Language -->
+            {data.projects?.slice(0, 2).map((project, index) => (
             <div class="bg-slate-800/30 rounded-xl p-8 hover:bg-slate-800/40 transition-all duration-300 reveal-card">
-            <a href="https://github.com/rahulbeniwal26119/laait" 
+            <a href={project.url} 
                 class="text-2xl font-semibold text-gray-200 hover:text-purple-400 transition-colors">
-                LAAIT Programming Language
+                {project.name}
             </a>
-            <div class="text-purple-400 mt-2">Go</div>
+            <div class="text-purple-400 mt-2">{project.mainTech || project.techTags?.join(', ')}</div>
             <p class="text-gray-300 my-4">
-                A lightweight interpreter featuring dynamic typing, first-class functions, and support for various data types. 
-                Includes a Jupyter-style notebook for interactive coding.
+                {project.description}
             </p>
             <div class="flex flex-wrap gap-2">
-                <span class="px-3 py-1 rounded-full bg-slate-800/50 text-sm text-purple-300">Interpreter</span>
-                <span class="px-3 py-1 rounded-full bg-slate-800/50 text-sm text-purple-300">Go</span>
-                <span class="px-3 py-1 rounded-full bg-slate-800/50 text-sm text-purple-300">Language Design</span>
+                {project.techTags?.map((tech, idx) => (
+                <span class="px-3 py-1 rounded-full bg-slate-800/50 text-sm text-purple-300">{tech}</span>
+                ))}
             </div>
             </div>
-
-            <!-- PMusic -->
-            <div class="bg-slate-800/30 rounded-xl p-8 hover:bg-slate-800/40 transition-all duration-300 reveal-card">
-            <a href="https://github.com/rahulbeniwal26119/pmusic" 
-                class="text-2xl font-semibold text-gray-200 hover:text-purple-400 transition-colors">
-                PMusic
-            </a>
-            <div class="text-purple-400 mt-2">Django, MongoDB</div>
-            <p class="text-gray-300 my-4">
-                A backend service capable of streaming any media type over the internet. Built with Django and MongoDB 
-                for efficient media handling and storage.
-            </p>
-            <div class="flex flex-wrap gap-2">
-                <span class="px-3 py-1 rounded-full bg-slate-800/50 text-sm text-purple-300">Django</span>
-                <span class="px-3 py-1 rounded-full bg-slate-800/50 text-sm text-purple-300">MongoDB</span>
-                <span class="px-3 py-1 rounded-full bg-slate-800/50 text-sm text-purple-300">Streaming</span>
-            </div>
-            </div>
+            ))}
         </div>
         </section>
 
         <!-- Open Source Contributions -->
         <section class="mb-20">
         <h2 class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 mb-12">
-            Open Source Contributions
+            {data.sectionTitles?.openSource}
         </h2>
 
         <!-- Organization Contributions -->
-        <!-- <h3 class="text-2xl text-gray-200 mb-8 bg-slate-1000/20 rounded-xl p-8 hover:bg-slate-800/40 transition-all duration-300 reveal-card">Organization Contributions</h3> -->
         <div class="grid md:grid-cols-2 gap-8 mb-16">
+            {data.openSourceContributions?.map((contribution, index) => (
             <div class="bg-slate-800/30 rounded-xl p-8 hover:bg-slate-800/40 transition-all duration-300 reveal-card">
-            <a href="https://github.com/AnswerDotAI" 
+            <a href={contribution.url} 
                 class="text-xl text-gray-200 hover:text-purple-400 transition-colors">
-                @AnswerDotAI
+                {contribution.organization}
             </a>
-            <div class="text-purple-400 mt-2">Fixed bugs in Utility Functions</div>
+            <div class="text-purple-400 mt-2">{contribution.description}</div>
             </div>
-            <div class="bg-slate-800/30 rounded-xl p-8 hover:bg-slate-800/40 transition-all duration-300 reveal-card">
-            <a href="https://github.com/CRED-CLUB" 
-                class="text-xl text-gray-200 hover:text-purple-400 transition-colors">
-                @CRED-CLUB
-            </a>
-            <div class="text-purple-400 mt-2">Fixed issues in DevOps</div>
-            </div>
+            ))}
         </div>
 
-        <!-- <h3 class="text-2xl text-gray-200 mb-8">Notable Projects</h3> -->
         <div class="grid md:grid-cols-2 gap-8">
+            {data.additionalProjects?.map((project, index) => (
             <div class="bg-slate-800/30 rounded-xl p-8 hover:bg-slate-800/40 transition-all duration-300 reveal-card">
-            <a href="https://github.com/Rahulbeniwal26119/jupyter-ipynbs" 
+            <a href={project.url} 
                 class="text-xl text-gray-200 hover:text-purple-400 transition-colors">
-                Python Learning Resources
+                {project.name}
             </a>
             <p class="text-gray-300 my-4">
-                Comprehensive collection of Jupyter notebooks covering advanced Python concepts including concurrency, 
-                metaclasses, decorators, and data structures.
+                {project.description}
             </p>
             <div class="flex flex-wrap gap-2">
-                <span class="px-3 py-1 rounded-full bg-slate-800/50 text-sm text-purple-300">Python</span>
-                <span class="px-3 py-1 rounded-full bg-slate-800/50 text-sm text-purple-300">Jupyter</span>
+                {project.techTags?.map((tech, idx) => (
+                <span class="px-3 py-1 rounded-full bg-slate-800/50 text-sm text-purple-300">{tech}</span>
+                ))}
             </div>
             </div>
+            ))}
+        </div>
+        </section>
 
+        <!-- Writing & Articles Section -->
+        <section class="mb-20">
+        <h2 class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 mb-12">
+            {data.sectionTitles?.writing}
+        </h2>
+
+        <!-- Writing Platforms -->
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
+            {data.writing?.platforms?.map((platform, index) => (
             <div class="bg-slate-800/30 rounded-xl p-8 hover:bg-slate-800/40 transition-all duration-300 reveal-card">
-            <a href="https://github.com/Rahulbeniwal26119/k_-_R_ANS" 
-                class="text-xl text-gray-200 hover:text-purple-400 transition-colors">
-                K&R C Solutions
-            </a>
-            <p class="text-gray-300 my-4">
-                Implementation of solutions from the C Programming Language book (K&R), 
-                focusing on problem-solving and UNIX philosophy.
-            </p>
-            <div class="flex flex-wrap gap-2">
-                <span class="px-3 py-1 rounded-full bg-slate-800/50 text-sm text-purple-300">C</span>
-                <span class="px-3 py-1 rounded-full bg-slate-800/50 text-sm text-purple-300">UNIX</span>
+                <div class="flex items-start gap-4 mb-4">
+                    <div class="text-3xl">{platform.icon}</div>
+                    <div>
+                        <a href={platform.url} 
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-2xl font-semibold text-gray-200 hover:text-purple-400 transition-colors">
+                            {platform.name}
+                        </a>
+                        {platform.featured && (
+                            <span class="ml-2 px-2 py-1 text-xs bg-purple-500/20 text-purple-300 rounded-full">Featured</span>
+                        )}
+                    </div>
+                </div>
+                <p class="text-gray-300 mb-4">
+                    {platform.description}
+                </p>
+                <a href={platform.url} 
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors">
+                    Visit Platform
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                    </svg>
+                </a>
             </div>
+            ))}
+        </div>
+
+        <!-- Writing Highlights -->
+        {data.writing?.highlights && (
+        <div class="bg-slate-800/20 rounded-xl p-6 reveal-card">
+            <h3 class="text-xl font-semibold text-purple-400 mb-4">Writing Topics & Highlights</h3>
+            <div class="grid md:grid-cols-2 gap-4">
+                {data.writing.highlights.map((highlight, index) => (
+                <div class="flex items-center gap-3 text-gray-300">
+                    <div class="w-2 h-2 bg-purple-400 rounded-full"></div>
+                    <span>{highlight}</span>
+                </div>
+                ))}
             </div>
         </div>
+        )}
         </section>
     </div>
 
-    <!-- Achievements Section - New -->
-    <!-- <section class="mb-20">
+
+    <!-- Achievements Section -->
+    <section class="mb-20">
         <h2
         class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 mb-12"
         >
-        Achievements & Recognition
+        {data.sectionTitles?.achievements}
         </h2>
         <div class="grid md:grid-cols-2 gap-8">
-        {
-            [
-            {
-                icon: "⭐",
-                title: "Technical Excellence",
-                description: "5-Star C and Python Coder on HackerRank",
-            },
-            {
-                icon: "🏆",
-                title: "Academic Achievement",
-                description:
-                "2nd Rank in Inter-Departmental Presentation Competition",
-            },
-            {
-                icon: "🌟",
-                title: "Professional Recognition",
-                description:
-                "Acknowledged by Engineering Head for outstanding contributions at LiveEasy",
-            },
-            {
-                icon: "🎓",
-                title: "Academic Performance",
-                description: "Maintained 8.72 CGPA in B.Tech (C.S.E.)",
-            },
-            ].map((achievement) => (
-            <div class="bg-slate-800/30 rounded-lg p-6 hover:bg-slate-700/30 transition-all">
+        {data.achievements?.map((achievement, index) => (
+            <div class="bg-slate-800/30 rounded-lg p-6 hover:bg-slate-700/30 transition-all reveal-card">
                 <div class="text-4xl mb-4">{achievement.icon}</div>
                 <h3 class="text-xl font-semibold text-gray-200 mb-2">
                 {achievement.title}
                 </h3>
                 <p class="text-gray-400">{achievement.description}</p>
             </div>
-            ))
-        }
-        </div>
-    </section> -->
-
-    <!-- Skills Section - Enhanced -->
-    <section class="mb-20">
-        <h2
-        class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 mb-12"
-        >
-        Technical Expertise
-        </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {Object.entries(data.skills || {}).map(([category, skills], index) => (
-            <div class="bg-slate-800/30 rounded-lg p-6 hover:bg-slate-700/30 transition-all reveal-card">
-                <h3 class="text-lg font-medium text-purple-400 mb-4">
-                {category}
-                </h3>
-                <div class="flex flex-wrap gap-2">
-                {skills.map((skill, idx) => (
-                    <span key={idx} class="px-3 py-1 rounded-full bg-slate-700/50 text-sm text-gray-300">
-                    {skill}
-                    </span>
-                ))}
-                </div>
-                </div>
-            </div>
         ))}
         </div>
     </section>
 
+    <!-- Skills Section - Enhanced -->
     <!-- Education Section - New -->
     <section class="mb-20">
         <h2
         class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 mb-12"
         >
-        Education
+        {data.sectionTitles?.education}
         </h2>
         <div class="space-y-6 reveal-card">
         {data.education?.map((edu, index) => (
@@ -330,47 +349,7 @@ import data from '../data.json';
         </div>
     </section>
 
-    <!-- Contact Section - New -->
-    <!-- <section class="mb-20">
-        <h2
-        class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 mb-12"
-        >
-        Get In Touch
-        </h2>
-        <div class="bg-slate-800/30 rounded-lg p-6">
-        <div class="grid md:grid-cols-2 gap-6">
-            <a
-            href="mailto:rahulbeniwal26119@gmail.com"
-            class="flex items-center gap-4 text-gray-300 hover:text-purple-400 transition-colors"
-            >
-            <span class="text-2xl">✉️</span>
-            <span>rahulbeniwal26119@gmail.com</span>
-            </a>
-            <a
-            href="tel:+916398486322"
-            class="flex items-center gap-4 text-gray-300 hover:text-purple-400 transition-colors"
-            >
-            <span class="text-2xl">📞</span>
-            <span>+91 6398486322</span>
-            </a>
-            <a
-            href="https://github.com/rahulbeniwal26119"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="flex items-center gap-4 text-gray-300 hover:text-purple-400 transition-colors"
-            >
-            <span class="text-2xl">🌐</span>
-            <span>GitHub Profile</span>
-            </a>
-            <div class="flex items-center gap-4 text-gray-300">
-            <span class="text-2xl">📍</span>
-            <span>KosiKalan, Mathura, IN</span>
-            </div>
-        </div>
-        </div>
-    </section> -->
-
-    </div>
+  </div>
 </div>
 </div>
 

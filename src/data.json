@@ -2,33 +2,48 @@
   "hero": {
     "title": "Rahul Beniwal",
     "subtitle": "Software Developer II",
-    "summary": "Skilled software developer with expertise in Python, Django, and backend technologies. Experienced in building scalable web apps and handling configuration-driven projects. A quick problem solver with a solid understanding of web technologies, known for delivering efficient, reliable solutions.",
+    "summary": "Results-driven backend engineer with deep expertise in Python, Django, and Docker. Builds and deploys scalable, configuration-driven web apps via robust CI/CD pipelines, consistently delivering efficient and reliable solutions.",
+    "scrollText": "Scroll to Explore",
     "contacts": {
       "email": "rahulbeniwal26119@gmail.com",
       "phone": "+91 6398486322"
     },
     "social": {
       "github": "https://github.com/rahulbeniwal26119",
-      "linkedin": "https://www.linkedin.com/in/rahulbeniwal26119/"
+      "linkedin": "https://www.linkedin.com/in/rahulbeniwal26119/",
+      "medium": "https://rahulbeniwal26119.medium.com/",
+      "blog": "https://takovibe.com"
     }
+  },
+  "sectionTitles": {
+    "experience": "Professional Experience",
+    "projects": "Projects",
+    "openSource": "Open Source Contributions",
+    "writing": "Writing & Articles",
+    "skills": "Technical Expertise",
+    "education": "Education",
+    "contact": "Get In Touch",
+    "achievements": "Achievements & Recognition"
   },
   "professionalExperience": [
     {
       "title": "Software Developer II",
-      "company": "LiveEasy (Formerly MoveEasy)",
-      "period": "Feb '23 – Present",
+      "company": "LiveEasy (Acquired by Appfolio)",
+      "period": "Feb '23 - Present",
       "location": "Ohio, United States",
       "highlights": [
-        "Led end-to-end integration with Verizon for Internet Services",
-        "Built APIs supporting 20+ charts, 30+ graphs, and 20+ reports",
-        "Optimized database queries, reducing response time from 3 minutes to 3 seconds",
-        "Designed data models and REST APIs for Property Management Service",
-        "Achieved up to 100% faster ORM query performance",
-        "Developed robust, flexible caching utilities for Django models",
-        "Integrated multiple services including Regal, Iterable, Verse, and IBEX"
+        "Built and customized a Keycloak-based auth microservice with SSO and fine-grained RBAC.",
+        "Implemented OAuth 2.0 sync for agent data, ending manual onboarding with Cloze.",
+        "Integrated Howard Hanna, LendingPad, Windermere, plus full Verizon rollout.",
+        "Shipped reporting suite: 20+ charts, 30+ graphs, 20+ exportable reports.",
+        "Cut DB latency from 3 min to 3 sec via smart indexing and caching.",
+        "Doubled Django ORM speed with a reusable caching utility.",
+        "Connected Regal, Iterable, Verse, and IBEX for event-driven engagement boosts."
       ],
       "tech": [
         "Python",
+        "Java",
+        "JavaScript",
         "Django",
         "PostgreSQL",
         "Celery",
@@ -41,11 +56,11 @@
     {
       "title": "Software Developer",
       "company": "LendenClub",
-      "period": "Jul '22 – Jan '23",
+      "period": "Jul '22 - Jan '23",
       "location": "Mumbai, Maharashtra",
       "highlights": [
         "Designed and implemented a JSON-configured secure proxy system for API interactions",
-        "Implemented an independent payment management service",
+        "Implemented an independent payment management service (Still being used)",
         "Reduced payment failures from 60% to 20%",
         "Enhanced system security and reliability"
       ],
@@ -61,7 +76,7 @@
     {
       "title": "Software Developer Intern",
       "company": "LendenClub",
-      "period": "Jul '21 – Jul '22",
+      "period": "Jul '21 - Jul '22",
       "location": "Mumbai, Maharashtra",
       "highlights": [
         "Developed client-facing APIs for business loan dashboards",
@@ -81,14 +96,22 @@
     {
       "name": "LAAIT Programming Language",
       "url": "https://github.com/rahulbeniwal26119/laait",
-      "description": "A lightweight interpreter featuring dynamic typing, lexical scoping, and first-class functions. Implemented in Go, it includes a recursive descent parser and tree-walk interpreter.",
-      "techTags": ["Interpreter", "Go", "Language Design"]
+      "description": "A lightweight interpreter featuring dynamic typing, first-class functions, and support for various data types. Includes a Jupyter-style notebook for interactive coding.",
+      "techTags": ["Interpreter", "Go", "Language Design"],
+      "mainTech": "Go"
     },
     {
-      "name": "Rust Blockchain",
-      "url": "https://github.com/rahulbeniwal26119/rust-blockchain",
-      "description": "A blockchain implementation in Rust with proof-of-work consensus, focusing on core blockchain concepts and Rust's memory safety features.",
-      "techTags": ["Rust", "Blockchain", "Cryptography"]
+      "name": "PMusic",
+      "url": "https://github.com/rahulbeniwal26119/pmusic",
+      "description": "A backend service capable of streaming any media type over the internet. Built with Django and MongoDB for efficient media handling and storage.",
+      "techTags": ["Django", "MongoDB", "Streaming"],
+      "mainTech": "Django, MongoDB"
+    },
+    {
+      "name": "Docker and K8 Examples",
+      "url": "https://github.com/Rahulbeniwal26119/docker-and-k8",
+      "description": "A collection of examples demonstrating the use of Docker and Kubernetes for container orchestration.",
+      "techTags": ["Docker", "Kubernetes", "DevOps"]
     },
     {
       "name": "K&R C Solutions",
@@ -97,14 +120,76 @@
       "techTags": ["C", "UNIX"]
     }
   ],
+  "additionalProjects": [
+    {
+      "name": "Python Learning Resources",
+      "url": "https://github.com/Rahulbeniwal26119/jupyter-ipynbs",
+      "description": "Comprehensive collection of Jupyter notebooks covering advanced Python concepts including concurrency, metaclasses, decorators, and data structures.",
+      "techTags": ["Python", "Jupyter"]
+    },
+    {
+      "name": "K&R C Solutions",
+      "url": "https://github.com/Rahulbeniwal26119/k_-_R_ANS",
+      "description": "Implementation of solutions from the C Programming Language book (K&R), focusing on problem-solving and UNIX philosophy.",
+      "techTags": ["C", "UNIX"]
+    }
+  ],
+  "writing": {
+    "platforms": [
+      {
+        "name": "Medium",
+        "url": "https://rahulbeniwal26119.medium.com/",
+        "description": "Technical articles and insights on software development, backend engineering, and programming best practices.",
+        "icon": "📝",
+        "featured": true
+      },
+      {
+        "name": "TakoVibe",
+        "url": "https://takovibe.com",
+        "description": "Personal blog covering technology, development experiences, and thought leadership in software engineering.",
+        "icon": "🌐",
+        "featured": true
+      }
+    ],
+    "highlights": [
+      "Technical deep-dives on Python and Django",
+      "Backend architecture and system design insights",
+      "DevOps and containerization best practices",
+      "Programming language design and implementation"
+    ]
+  },
   "openSourceContributions": [
     {
       "organization": "@AnswerDotAI",
+      "url": "https://github.com/AnswerDotAI",
       "description": "Fixed bugs in Utility Functions"
     },
     {
       "organization": "@CRED-CLUB",
+      "url": "https://github.com/CRED-CLUB",
       "description": "Fixed issues in DevOps"
+    }
+  ],
+  "achievements": [
+    {
+      "icon": "⭐",
+      "title": "Technical Excellence",
+      "description": "5-Star C and Python Coder on HackerRank"
+    },
+    {
+      "icon": "🏆",
+      "title": "Academic Achievement",
+      "description": "2nd Rank in Inter-Departmental Presentation Competition"
+    },
+    {
+      "icon": "🌟",
+      "title": "Professional Recognition",
+      "description": "Acknowledged by Engineering Head for outstanding contributions at LiveEasy"
+    },
+    {
+      "icon": "🎓",
+      "title": "Academic Performance",
+      "description": "Maintained 8.72 CGPA in B.Tech (C.S.E.)"
     }
   ],
   "skills": {
@@ -137,6 +222,7 @@
       "Docker",
       "Kubernetes",
       "Google Cloud Platform",
+      "AWS",
       "Nginx"
     ],
     "Development Tools": [
