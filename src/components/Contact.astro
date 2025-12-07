@@ -1,0 +1,61 @@
+---
+import data from "../data.json";
+import Section from "./Section.astro";
+---
+
+<Section id="contact">
+    <div class="min-h-[50vh] flex flex-col justify-between">
+        <div>
+            <h2
+                class="text-6xl font-black font-display text-transparent bg-clip-text bg-gradient-to-r from-text to-text/50 mb-16 tracking-tight dark:from-white dark:to-white/50"
+            >
+                {data.sectionTitles?.contact}
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="space-y-8">
+                    <p
+                        class="text-2xl text-text-muted font-light leading-relaxed max-w-lg dark:text-white/60"
+                    >
+                        I'm always open to discussing product design work or
+                        partnership opportunities.
+                    </p>
+
+                    <a
+                        href={`mailto:${data.hero?.contacts?.email}`}
+                        class="inline-block text-4xl md:text-5xl font-bold text-text hover:text-primary transition-colors tracking-tight dark:text-white"
+                    >
+                        {data.hero?.contacts?.email}
+                    </a>
+
+                    <div class="flex gap-6">
+                        {
+                            Object.entries(data.hero?.social || {}).map(
+                                ([platform, url]) => (
+                                    <a
+                                        href={url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="text-text-muted hover:text-text transition-colors text-lg capitalize dark:hover:text-white"
+                                    >
+                                        {platform}
+                                    </a>
+                                ),
+                            )
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="mt-24 pt-8 border-t border-black/5 flex justify-between items-center text-text-muted dark:border-white/5"
+        >
+            <p>
+                © {new Date().getFullYear()}
+                {data.hero?.title}. All rights reserved.
+            </p>
+            <p class="text-sm">Designed & Built with Astro</p>
+        </div>
+    </div>
+</Section>

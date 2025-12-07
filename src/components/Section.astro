@@ -1,0 +1,16 @@
+---
+interface Props {
+    id?: string;
+    className?: string;
+}
+
+const { id, className = "" } = Astro.props;
+---
+
+<section id={id} class={`mb-20 ${className} reveal-section`}>
+    <slot />
+</section>
+
+<style>
+    /* Base styles for sections if needed */
+</style>

@@ -1,0 +1,30 @@
+---
+import data from "../data.json";
+import Section from "./Section.astro";
+---
+
+<Section id="open-source">
+    <h2
+        class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-text to-text/50 mb-12 dark:from-white dark:to-white/50"
+    >
+        {data.sectionTitles?.openSource}
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-8 mb-16">
+        {
+            data.openSourceContributions?.map((contribution) => (
+                <div class="bg-surface/30 rounded-xl p-8 hover:bg-surface/40 transition-all duration-300 reveal-card border border-black/5 dark:border-white/5">
+                    <a
+                        href={contribution.url}
+                        class="text-xl text-text hover:text-primary transition-colors dark:text-white"
+                    >
+                        {contribution.organization}
+                    </a>
+                    <div class="text-primary mt-2">
+                        {contribution.description}
+                    </div>
+                </div>
+            ))
+        }
+    </div>
+</Section>

@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "Portfolio",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -9,12 +9,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/tailwind": "^5.1.4",
+    "@astrojs/tailwind": "^6.0.2",
     "@studio-freight/lenis": "^1.0.42",
-    "astro": "^5.1.5",
-    "gsap": "^3.12.5",
-    "lenis": "^1.1.19",
-    "three": "^0.172.0"
+    "astro": "^5.16.4",
+    "gsap": "^3.12.5"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",

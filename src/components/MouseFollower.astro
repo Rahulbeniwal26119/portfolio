@@ -1,0 +1,84 @@
+---
+
+---
+
+<div
+    id="cursor"
+    class="fixed top-0 left-0 w-8 h-8 pointer-events-none z-[9999] mix-blend-difference hidden md:block"
+>
+    <div
+        class="cursor-dot w-2 h-2 bg-white rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-transform duration-300"
+    >
+    </div>
+    <div
+        class="cursor-outline w-8 h-8 border border-white rounded-full absolute top-0 left-0 transition-transform duration-100 ease-out"
+    >
+    </div>
+</div>
+
+<script>
+    const cursor = document.getElementById("cursor");
+    const dot = cursor?.querySelector(".cursor-dot");
+    const outline = cursor?.querySelector(".cursor-outline");
+
+    let mouseX = 0;
+    let mouseY = 0;
+    let outlineX = 0;
+    let outlineY = 0;
+
+    document.addEventListener("mousemove", (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+
+        if (dot) {
+            dot.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
+        }
+    });
+
+    const animate = () => {
+        const dx = mouseX - outlineX;
+        const dy = mouseY - outlineY;
+
+        outlineX += dx * 0.2;
+        outlineY += dy * 0.2;
+
+        if (outline) {
+            outline.style.transform = `translate(${outlineX}px, ${outlineY}px) translate(-50%, -50%)`;
+        }
+
+        requestAnimationFrame(animate);
+    };
+
+    animate();
+
+    // Hover effects
+    const interactiveElements = document.querySelectorAll(
+        "a, button, .interactive",
+    );
+
+    interactiveElements.forEach((el) => {
+        el.addEventListener("mouseenter", () => {
+            if (outline) outline.style.transform += " scale(1.5)";
+            if (dot) dot.style.transform += " scale(0.5)";
+        });
+
+        el.addEventListener("mouseleave", () => {
+            // Reset scale is handled by the animate loop overwriting transform,
+            // but we need to ensure the scale logic is integrated there or handled via classes.
+            // For simplicity, let's just use CSS classes for state if possible, or simple inline styles.
+            // Actually, the animate loop overwrites transform completely.
+            // Let's modify the animate loop to respect a scale factor.
+        });
+    });
+
+    // Better approach for hover: toggle class
+    document.body.addEventListener("mouseover", (e) => {
+        if ((e.target as HTMLElement).closest("a, button, .interactive")) {
+            outline?.classList.add("scale-150");
+            dot?.classList.add("scale-50");
+        } else {
+            outline?.classList.remove("scale-150");
+            dot?.classList.remove("scale-50");
+        }
+    });
+</script>

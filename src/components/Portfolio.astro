@@ -1,429 +1,83 @@
 ---
-import data from '../data.json';
+import data from "../data.json";
+import Hero from "./Hero.astro";
+import Experience from "./Experience.astro";
+import Projects from "./Projects.astro";
+import OpenSource from "./OpenSource.astro";
+import Writing from "./Writing.astro";
+import Skills from "./Skills.astro";
+import Education from "./Education.astro";
+import Achievements from "./Achievements.astro";
+import Contact from "./Contact.astro";
+import ProjectModal from "./ProjectModal.astro";
+import ThemeToggle from "./ThemeToggle.astro";
+import ScrollToTop from "./ScrollToTop.astro";
+import MouseFollower from "./MouseFollower.astro";
+
+const { config } = data;
 ---
 
-<div class="relative min-h-screen overflow-hidden">
-<section
-    class="relative h-screen flex items-center justify-center overflow-hidden"
-    id="hero-section"
+<div
+  class="relative min-h-screen overflow-hidden bg-background text-text transition-colors duration-300 selection:bg-primary selection:text-white"
 >
-    <div class="absolute inset-0" id="parallax-bg"></div>
-    <div class="relative z-10 text-center max-w-4xl mx-auto px-6">
-    <h1
-        class="text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 mb-6 opacity-0 transform translate-y-8"
-        id="hero-title"
-    >
-        {data.hero?.title}
-    </h1>
-    <div
-        class="text-2xl text-purple-400 mb-6 opacity-0 transform translate-y-8"
-        id="hero-subtitle"
-    >
-        {data.hero?.subtitle}
-    </div>
-    <p
-        class="text-xl text-gray-300 leading-relaxed mb-8 opacity-0 transform translate-y-8"
-        id="hero-summary"
-    >
-        {data.hero?.summary}
-    </p>
-    <div
-        class="flex justify-center gap-6 opacity-0 transform translate-y-8"
-        id="hero-contacts"
-    >
-        <a
-        href={`mailto:${data.hero?.contacts?.email}`}
-        class="text-gray-300 hover:text-purple-400"
-        >
-        ✉️ {data.hero?.contacts?.email}
-        </a>
-        <a
-        href={`tel:${data.hero?.contacts?.phone}`}
-        class="text-gray-300 hover:text-purple-400"
-        >
-        📞 {data.hero?.contacts?.phone}
-        </a>
-    </div>
-    <div
-        class="flex justify-center gap-6 mt-4 opacity-0 transform translate-y-8"
-        id="hero-social"
-    >
-        <a
-        href={data.hero?.social?.github}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="flex items-center gap-2 text-gray-300 hover:text-purple-400 transition-colors"
-        >
-        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-            <path
-            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
-            ></path>
-        </svg>
-        GitHub
-        </a>
-        <a
-        href={data.hero?.social?.linkedin}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="flex items-center gap-2 text-gray-300 hover:text-purple-400 transition-colors"
-        >
-        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-            <path
-            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
-            ></path>
-        </svg>
-        LinkedIn
-        </a>
-        <a
-        href={data.hero?.social?.medium}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="flex items-center gap-2 text-gray-300 hover:text-purple-400 transition-colors"
-        >
-        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-            <path
-            d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"
-            ></path>
-        </svg>
-        Medium
-        </a>
-        <a
-        href={data.hero?.social?.blog}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="flex items-center gap-2 text-gray-300 hover:text-purple-400 transition-colors"
-        >
-        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-            <path
-            d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
-            ></path>
-        </svg>
-        Blog
-        </a>
-    </div>
-    </div>
-    <div class="absolute left-1/2 transform -translate-x-1/2 bottom-4">
-    <div class="flex items-center gap-2">
-        <div class="w-3 h-3 bg-purple-500 animate-bounce"></div>
-        <div class="text-gray-400 text-sm">{data.hero?.scrollText}</div>
-    </div>
-    </div>
-</section>
+  <MouseFollower />
+  <ThemeToggle />
 
-<!-- Main Content with Smooth Scroll -->
-<div class="relative z-10" data-scroll-container>
-    <!-- Experience Timeline - Enhanced -->
+  <Hero />
+
+  <!-- Main Content with Smooth Scroll -->
+  <div class="relative z-10" data-scroll-container>
     <div class="max-w-7xl mx-auto px-6 md:px-12">
-    <section class="mb-20">
-        <h2
-        class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 mb-12"
-        >
-        {data.sectionTitles?.experience}
-        </h2>
-        <div class="space-y-12">
-        {data.professionalExperience?.map((job, index) => (
-            <div class="bg-slate-800/30 rounded-xl p-8 hover:bg-slate-800/40 transition-all duration-300 reveal-card">
-                <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
-                <div>
-                    <h3 class="text-2xl font-semibold text-gray-200">
-                    {job.title}
-                    </h3>
-                    <div class="text-purple-400 mt-1">{job.company}</div>
-                </div>
-                <div class="text-gray-400 mt-2 md:mt-0 text-right">
-                    <div>{job.period}</div>
-                    <div>{job.location}</div>
-                </div>
-                </div>
-                <ul class="list-disc list-inside text-gray-300 mb-6 space-y-2">
-                {job.highlights?.map((highlight, idx) => (
-                    <li class="pl-2">{highlight}</li>
-                ))}
-                </ul>
-                <div class="flex flex-wrap gap-2">
-                {job.tech?.map((techItem, idx) => (
-                    <span class="px-3 py-1 rounded-full bg-purple-500/10 text-sm text-purple-300 border border-purple-500/20">
-                    {techItem}
-                    </span>
-                ))}
-                </div>
-            </div>
-        ))}
-        </div>
-    </section>
+      {
+        config?.sectionOrder?.map((sectionName) => {
+          const isEnabled = config?.sections?.[sectionName];
+          if (!isEnabled) return null;
 
-    <section class="mb-20">
-        <h2
-        class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 mb-12"
-        >
-        {data.sectionTitles?.skills}
-        </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {Object.entries(data.skills || {}).map(([category, skills], index) => (
-            <div class="bg-slate-800/30 rounded-lg p-6 hover:bg-slate-700/30 transition-all reveal-card">
-                <h3 class="text-lg font-medium text-purple-400 mb-4">
-                {category}
-                </h3>
-                <div class="flex flex-wrap gap-2">
-                {skills.map((skill, idx) => (
-                    <span class="px-3 py-1 rounded-full bg-slate-700/50 text-sm text-gray-300">
-                    {skill}
-                    </span>
-                ))}
-                </div>
-            </div>
-        ))}
-        </div>
-    </section>
-
-    <div>
-        <!-- Projects -->
-        <section class="mb-20">
-        <h2 class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 mb-12">
-            {data.sectionTitles?.projects}
-        </h2>
-        
-        <div class="grid md:grid-cols-2 gap-8">
-            {data.projects?.slice(0, 2).map((project, index) => (
-            <div class="bg-slate-800/30 rounded-xl p-8 hover:bg-slate-800/40 transition-all duration-300 reveal-card">
-            <a href={project.url} 
-                class="text-2xl font-semibold text-gray-200 hover:text-purple-400 transition-colors">
-                {project.name}
-            </a>
-            <div class="text-purple-400 mt-2">{project.mainTech || project.techTags?.join(', ')}</div>
-            <p class="text-gray-300 my-4">
-                {project.description}
-            </p>
-            <div class="flex flex-wrap gap-2">
-                {project.techTags?.map((tech, idx) => (
-                <span class="px-3 py-1 rounded-full bg-slate-800/50 text-sm text-purple-300">{tech}</span>
-                ))}
-            </div>
-            </div>
-            ))}
-        </div>
-        </section>
-
-        <!-- Open Source Contributions -->
-        <section class="mb-20">
-        <h2 class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 mb-12">
-            {data.sectionTitles?.openSource}
-        </h2>
-
-        <!-- Organization Contributions -->
-        <div class="grid md:grid-cols-2 gap-8 mb-16">
-            {data.openSourceContributions?.map((contribution, index) => (
-            <div class="bg-slate-800/30 rounded-xl p-8 hover:bg-slate-800/40 transition-all duration-300 reveal-card">
-            <a href={contribution.url} 
-                class="text-xl text-gray-200 hover:text-purple-400 transition-colors">
-                {contribution.organization}
-            </a>
-            <div class="text-purple-400 mt-2">{contribution.description}</div>
-            </div>
-            ))}
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-8">
-            {data.additionalProjects?.map((project, index) => (
-            <div class="bg-slate-800/30 rounded-xl p-8 hover:bg-slate-800/40 transition-all duration-300 reveal-card">
-            <a href={project.url} 
-                class="text-xl text-gray-200 hover:text-purple-400 transition-colors">
-                {project.name}
-            </a>
-            <p class="text-gray-300 my-4">
-                {project.description}
-            </p>
-            <div class="flex flex-wrap gap-2">
-                {project.techTags?.map((tech, idx) => (
-                <span class="px-3 py-1 rounded-full bg-slate-800/50 text-sm text-purple-300">{tech}</span>
-                ))}
-            </div>
-            </div>
-            ))}
-        </div>
-        </section>
-
-        <!-- Writing & Articles Section -->
-        <section class="mb-20">
-        <h2 class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 mb-12">
-            {data.sectionTitles?.writing}
-        </h2>
-
-        <!-- Writing Platforms -->
-        <div class="grid md:grid-cols-2 gap-8 mb-8">
-            {data.writing?.platforms?.map((platform, index) => (
-            <div class="bg-slate-800/30 rounded-xl p-8 hover:bg-slate-800/40 transition-all duration-300 reveal-card">
-                <div class="flex items-start gap-4 mb-4">
-                    <div class="text-3xl">{platform.icon}</div>
-                    <div>
-                        <a href={platform.url} 
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="text-2xl font-semibold text-gray-200 hover:text-purple-400 transition-colors">
-                            {platform.name}
-                        </a>
-                        {platform.featured && (
-                            <span class="ml-2 px-2 py-1 text-xs bg-purple-500/20 text-purple-300 rounded-full">Featured</span>
-                        )}
-                    </div>
-                </div>
-                <p class="text-gray-300 mb-4">
-                    {platform.description}
-                </p>
-                <a href={platform.url} 
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors">
-                    Visit Platform
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                    </svg>
-                </a>
-            </div>
-            ))}
-        </div>
-
-        <!-- Writing Highlights -->
-        {data.writing?.highlights && (
-        <div class="bg-slate-800/20 rounded-xl p-6 reveal-card">
-            <h3 class="text-xl font-semibold text-purple-400 mb-4">Writing Topics & Highlights</h3>
-            <div class="grid md:grid-cols-2 gap-4">
-                {data.writing.highlights.map((highlight, index) => (
-                <div class="flex items-center gap-3 text-gray-300">
-                    <div class="w-2 h-2 bg-purple-400 rounded-full"></div>
-                    <span>{highlight}</span>
-                </div>
-                ))}
-            </div>
-        </div>
-        )}
-        </section>
+          switch (sectionName) {
+            case "experience":
+              return <Experience />;
+            case "projects":
+              return <Projects />;
+            case "skills":
+              return <Skills />;
+            case "writing":
+              return <Writing />;
+            case "openSource":
+              return <OpenSource />;
+            case "achievements":
+              return <Achievements />;
+            case "education":
+              return <Education />;
+            case "contact":
+              return <Contact />;
+            default:
+              return null;
+          }
+        })
+      }
     </div>
-
-
-    <!-- Achievements Section -->
-    <section class="mb-20">
-        <h2
-        class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 mb-12"
-        >
-        {data.sectionTitles?.achievements}
-        </h2>
-        <div class="grid md:grid-cols-2 gap-8">
-        {data.achievements?.map((achievement, index) => (
-            <div class="bg-slate-800/30 rounded-lg p-6 hover:bg-slate-700/30 transition-all reveal-card">
-                <div class="text-4xl mb-4">{achievement.icon}</div>
-                <h3 class="text-xl font-semibold text-gray-200 mb-2">
-                {achievement.title}
-                </h3>
-                <p class="text-gray-400">{achievement.description}</p>
-            </div>
-        ))}
-        </div>
-    </section>
-
-    <!-- Skills Section - Enhanced -->
-    <!-- Education Section - New -->
-    <section class="mb-20">
-        <h2
-        class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 mb-12"
-        >
-        {data.sectionTitles?.education}
-        </h2>
-        <div class="space-y-6 reveal-card">
-        {data.education?.map((edu, index) => (
-            <div class="bg-slate-800/30 rounded-lg p-6">
-                <h3 class="text-xl font-semibold text-gray-200 mb-2">
-                {edu.degree}
-                </h3>
-                <div class="text-purple-400 mb-2">
-                {edu.institution}
-                </div>
-                <div class="text-gray-400">
-                {edu.period}
-                </div>
-                <div class="text-gray-300 mt-2">
-                CGPA: {edu.cgpa}
-                </div>
-            </div>
-        ))}
-        </div>
-    </section>
-
   </div>
-</div>
+
+  <ProjectModal />
+  <ScrollToTop />
 </div>
 
 <script>
   import gsap from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
-  import * as THREE from "three";
   import Lenis from "@studio-freight/lenis";
 
   gsap.registerPlugin(ScrollTrigger);
-
-  // Parallax background
-  const initParallaxBg = () => {
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(
-      75,
-      window.innerWidth / window.innerHeight,
-      0.1,
-      1000,
-    );
-    const renderer = new THREE.WebGLRenderer({ alpha: true });
-    const container = document.getElementById("parallax-bg");
-
-    if (!container) return;
-
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    container.appendChild(renderer.domElement);
-
-    // Add particles
-    const geometry = new THREE.BufferGeometry();
-    const vertices = [];
-    for (let i = 0; i < 5000; i++) {
-      vertices.push(
-        THREE.MathUtils.randFloatSpread(2000),
-        THREE.MathUtils.randFloatSpread(2000),
-        THREE.MathUtils.randFloatSpread(2000),
-      );
-    }
-    geometry.setAttribute(
-      "position",
-      new THREE.Float32BufferAttribute(vertices, 3),
-    );
-    const material = new THREE.PointsMaterial({ color: 0x8844ee, size: 2 });
-    const points = new THREE.Points(geometry, material);
-    scene.add(points);
-
-    camera.position.z = 500;
-
-    const animate = () => {
-      requestAnimationFrame(animate);
-      points.rotation.x += 0.001;
-      points.rotation.y += 0.001;
-      renderer.render(scene, camera);
-    };
-    animate();
-
-    // Handle resize
-    window.addEventListener("resize", () => {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
-    });
-  };
 
   // Smooth scroll
   const initSmoothScroll = () => {
     const lenis = new Lenis({
       duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      orientation: "vertical",
-      smoothWheel: true,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Default easing
+      touchMultiplier: 2,
     });
 
-    function raf(time) {
+    function raf(time: number) {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
@@ -459,10 +113,10 @@ import data from '../data.json';
     });
 
     // Reveal animations for sections
-    gsap.utils.toArray(".reveal-text").forEach((text) => {
-      gsap.from(text, {
+    gsap.utils.toArray(".reveal-section").forEach((section: any) => {
+      gsap.from(section, {
         scrollTrigger: {
-          trigger: text,
+          trigger: section,
           start: "top 80%",
           end: "bottom 20%",
           toggleActions: "play none none reverse",
@@ -474,7 +128,7 @@ import data from '../data.json';
     });
 
     // Card reveal animations
-    gsap.utils.toArray(".reveal-card").forEach((card) => {
+    gsap.utils.toArray(".reveal-card").forEach((card: any) => {
       gsap.from(card, {
         scrollTrigger: {
           trigger: card,
@@ -498,7 +152,6 @@ import data from '../data.json';
 
   // Initialize everything
   document.addEventListener("DOMContentLoaded", () => {
-    initParallaxBg();
     initSmoothScroll();
     initAnimations();
   });
@@ -551,4 +204,3 @@ import data from '../data.json';
     }
   }
 </style>
-
