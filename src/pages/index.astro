@@ -1,5 +1,6 @@
 ---
 import Portfolio from "../components/Portfolio.astro";
+import data from "../data.json";
 import "../styles/global.css";
 ---
 
@@ -7,9 +8,13 @@ import "../styles/global.css";
 <html lang="en" class="overflow-x-hidden">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Rahul Beniwal's Portfolio" />
+    <meta name="description" content={`${data.hero?.title}'s Portfolio`} />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href={`data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'><circle cx='64' cy='64' r='64' fill='%238b5cf6'/><text x='64' y='64' font-family='system-ui, -apple-system, sans-serif' font-weight='900' font-size='84' fill='white' text-anchor='middle' dominant-baseline='central'>${data.hero?.title?.charAt(0) || "R"}</text><style>@media (prefers-color-scheme: dark) { circle { fill: %23a78bfa; } }</style></svg>`}
+    />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
@@ -19,7 +24,7 @@ import "../styles/global.css";
       rel="stylesheet"
     />
     <meta name="generator" content={Astro.generator} />
-    <title>Rahul Beniwal</title>
+    <title>{data.hero?.title}</title>
   </head>
   <body class="text-gray-100 min-h-screen overflow-x-hidden">
     <main class="min-h-screen pt-14">
