@@ -20,6 +20,13 @@ const { config } = data;
 <div
   class="relative min-h-screen overflow-hidden bg-background text-text transition-colors duration-300 selection:bg-primary selection:text-white"
 >
+  {
+    config?.underConstruction && (
+      <div class="fixed top-0 left-0 w-full bg-yellow-500 text-black text-center py-2 z-50 animate-fade-in">
+        🚧 Site under construction – updates coming soon!
+      </div>
+    )
+  }
   <MouseFollower />
   <ThemeToggle />
 

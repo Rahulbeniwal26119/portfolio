@@ -1,6 +1,7 @@
 {
   "config": {
     "theme": "system",
+    "underConstruction": false,
     "sections": {
       "experience": true,
       "projects": true,
@@ -25,7 +26,7 @@
   "hero": {
     "title": "Rahul Beniwal",
     "subtitle": "Software Developer II",
-    "summary": "Results-driven backend engineer with deep expertise in Python, Django, and Docker. Builds and deploys scalable, configuration-driven web apps via robust CI/CD pipelines, consistently delivering efficient and reliable solutions.",
+    "summary": "Senior-level Backend Developer with 3+ years of experience in Python (Django/DRF), specializing in scalable, configuration-driven web applications. Deep expertise in Generative AI (RAG, LangChain, Vector Databases) for innovative feature development. Seeking to provide technical leadership and drive impactful backend architecture and AI integration projects.",
     "scrollText": "Scroll to Explore",
     "contacts": {
       "email": "rahulbeniwal26119@gmail.com",
@@ -55,13 +56,13 @@
       "period": "Feb '23 - Present",
       "location": "Ohio, United States",
       "highlights": [
-        "Built and customized a Keycloak-based auth microservice with SSO and fine-grained RBAC.",
-        "Implemented OAuth 2.0 sync for agent data, ending manual onboarding with Cloze.",
-        "Integrated Howard Hanna, LendingPad, Windermere, plus full Verizon rollout.",
-        "Shipped reporting suite: 20+ charts, 30+ graphs, 20+ exportable reports.",
-        "Cut DB latency from 3 min to 3 sec via smart indexing and caching.",
-        "Doubled Django ORM speed with a reusable caching utility.",
-        "Connected Regal, Iterable, Verse, and IBEX for event-driven engagement boosts."
+        "Spearheaded 10+ complex integrations with Verizon, Verse, Regal, Cloze, MoxiWorks, and other key partners.",
+        "Led end-to-end Verizon integration, implementing internet service workflows seamlessly.",
+        "Integrated Regal for Customer Success and Concierge teams, enhancing client management.",
+        "Built a unified reporting dashboard with 20+ charts and 30+ graphs, enabling performance insights.",
+        "Optimized DB queries, cutting response time from 3 minutes to 3 seconds.",
+        "Developed a Keycloak-based authentication microservice with SSO and fine-grained RBAC.",
+        "Created metaclass-based caching utilities, boosting API responsiveness for high-traffic endpoints."
       ],
       "tech": [
         "Python",
@@ -116,6 +117,18 @@
     }
   ],
   "projects": [
+    {
+      "name": "CodeDiff",
+      "url": "https://codediff.takovibe.com/",
+      "description": "Professional online code diff tool supporting 18+ programming languages with syntax highlighting and side-by-side view.",
+      "techTags": [
+        "React",
+        "Diff Tool",
+        "DevTools"
+      ],
+      "mainTech": "React",
+      "preview": true
+    },
     {
       "name": "TakoVibe",
       "url": "https://takovibe.com",
@@ -227,6 +240,11 @@
       "organization": "@CRED-CLUB",
       "url": "https://github.com/CRED-CLUB",
       "description": "Fixed issues in DevOps"
+    },
+    {
+      "organization": "@nvm-sh",
+      "url": "https://github.com/nvm-sh",
+      "description": "Fixed Multiple Issues including support for node < 16 installation on arm64 Macs"
     }
   ],
   "achievements": [

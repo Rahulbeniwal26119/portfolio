@@ -13,8 +13,9 @@
 - **⚡ High Performance**: Built on Astro for blazing fast load times and zero-JS default.
 - **🧩 Modular Components**:
     - **Cinematic Hero**: Spotlight effects and scroll-driven text reveals.
-    - **Bento Grid Projects**: Widget-style project cards with live preview modals.
+    - **Bento Grid Projects**: Responsive 4-item repeating pattern layout (Large/Small) with iframe-based **Live Previews**.
     - **Interactive Timeline**: Clean "Spec Sheet" style experience section.
+    - **Status Banner**: Configurable "Under Construction" mode.
     - **Writing & Skills**: Beautifully designed sections for content creators.
 
 ## 🛠️ Tech Stack
@@ -58,6 +59,19 @@ The entire portfolio is controlled by `src/data.json`. You don't need to touch t
 
 ### 1. Reordering Sections
 Change the order of sections by modifying the `sectionOrder` array:
+
+### 2. Site Status (Under Construction)
+Show a visible "Under Construction" banner at the top of the site:
+
+```json
+"config": {
+  "underConstruction": true
+}
+```
+
+### 3. Bento Grid & Live Previews
+Projects are automatically arranged in a responsive **Bento Grid** (Repeating 4-item pattern: Large-Small / Small-Large).
+To enable the "Live Preview" modal for a project (opens the site in an iframe overlay), add `"preview": true`:
 
 ```json
 "config": {
