@@ -2,7 +2,7 @@
 
 > A high-end, configuration-driven portfolio template built with **Astro**, **Tailwind CSS**, and **Framer Motion** aesthetics.
 
-![Portfolio Preview](https://via.placeholder.com/1200x600?text=Portfolio+Preview)
+![Portfolio Preview](https://rahulbeniwal.takovibe.com)
 
 ## 🚀 Features
 
