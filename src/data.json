@@ -25,8 +25,8 @@
   },
   "hero": {
     "title": "Rahul Beniwal",
-    "subtitle": "Software Developer II",
-    "summary": "Senior-level Backend Developer with 3+ years of experience in Python (Django/DRF), specializing in scalable, configuration-driven web applications. Deep expertise in Generative AI (RAG, LangChain, Vector Databases) for innovative feature development. Seeking to provide technical leadership and drive impactful backend architecture and AI integration projects.",
+    "subtitle": "Senior Backend Engineer - AI Integration Specialist",
+    "summary": "Backend engineer with 4+ years of experience building scalable microservices and high-performance backend systems in Python. Proven experience designing REST APIs using Django and DRF, applying system design principles to deliver low-latency and reliable platforms. Experienced in integrating Agentic AI and LLM workflows using LangGraph, LangChain, and vector databases, and deploying production systems on AWS with Docker and CI/CD.",
     "scrollText": "Scroll to Explore",
     "contacts": {
       "email": "rahulbeniwal26119@gmail.com",
@@ -53,70 +53,75 @@
     {
       "title": "Software Developer II",
       "company": "LiveEasy (Acquired by Appfolio)",
-      "period": "Feb '23 - Present",
+      "period": "02/2023 - Present",
       "location": "Ohio, United States",
       "highlights": [
-        "Spearheaded 10+ complex integrations with Verizon, Verse, Regal, Cloze, MoxiWorks, and other key partners.",
-        "Led end-to-end Verizon integration, implementing internet service workflows seamlessly.",
-        "Integrated Regal for Customer Success and Concierge teams, enhancing client management.",
-        "Built a unified reporting dashboard with 20+ charts and 30+ graphs, enabling performance insights.",
-        "Optimized DB queries, cutting response time from 3 minutes to 3 seconds.",
-        "Developed a Keycloak-based authentication microservice with SSO and fine-grained RBAC.",
-        "Created metaclass-based caching utilities, boosting API responsiveness for high-traffic endpoints."
+        "Engineered a custom metaclass-based caching layer and ORM strategy that reduced database queries by 90% (900 to 86) and slashed API latency from 3 minutes to 3 seconds by implementing server-side caching, query batching and optimized indexes",
+        "Designed and implemented microservices and REST APIs to power internal dashboards used by admins to track revenue and key business metrics across 800+ brokerages, collaborating directly with CFO and marketing teams while maintaining API latencies under 3 seconds.",
+        "Built and maintained 20+ mission-critical integrations (Verizon, MoxiWorks, Regal, Century 21, Howard Hanna) using Celery and Redis, enabling large-scale data synchronization across platforms serving millions of users.",
+        "Architected and implemented an OAuth2.0 authentication microservice by extending Keycloak through custom SPIs and source-level modifications, standardizing SSO and RBAC while securing internal security approval for rollout.",
+        "Collaborated with product and cloud teams to deploy containerized services on AWS using Docker and CI/CD pipelines, reducing deployment lead time by 60% through automated builds and IaC patterns"
       ],
       "tech": [
         "Python",
-        "Java",
-        "JavaScript",
         "Django",
         "PostgreSQL",
-        "Celery",
         "Redis",
+        "Celery",
         "Docker",
-        "Pandas",
-        "XlsxWriter"
+        "Keycloak",
+        "AWS"
       ]
     },
     {
       "title": "Software Developer",
       "company": "LendenClub",
-      "period": "Jul '22 - Jan '23",
-      "location": "Mumbai, Maharashtra",
+      "period": "07/2021 - 01/2023",
+      "location": "Goregaon West, Mumbai",
       "highlights": [
-        "Designed and implemented a JSON-configured secure proxy system for API interactions",
-        "Implemented an independent payment management service (Still being used)",
-        "Reduced payment failures from 60% to 20%",
-        "Enhanced system security and reliability"
+        "Engineered the \"PMI\" payment gateway interface, reducing payment failure rates from 60% to 20%.",
+        "Developed 30% of core IM+ APIs and a Secure E2E-encrypted proxy that ensured 100% auditable communication for financial data by enforcing strict REST contracts, input validation and tracing",
+        "Optimized 10+ Celery background jobs to maintain data integrity and near-real-time performance across investor dashboards, accomplishing a 40% improvement in processing throughput by parallelizing tasks and tuning concurrency"
       ],
       "tech": [
         "Python",
         "Django",
         "PostgreSQL",
-        "Cryptography",
         "Celery",
-        "Redis"
-      ]
-    },
-    {
-      "title": "Software Developer Intern",
-      "company": "LendenClub",
-      "period": "Jul '21 - Jul '22",
-      "location": "Mumbai, Maharashtra",
-      "highlights": [
-        "Developed client-facing APIs for business loan dashboards",
-        "Created scheduled jobs to synchronize systems",
-        "Contributed to core platform development"
-      ],
-      "tech": [
-        "Python",
-        "Django",
-        "PostgreSQL",
         "Redis",
-        "Celery"
+        "Docker",
+        "REST APIs",
+        "Observability"
       ]
     }
   ],
   "projects": [
+    {
+      "name": "TakoVibe",
+      "url": "https://takovibe.com",
+      "description": "Full-Stack Tech-Education Platform. Developer-focused platform with a rich in-browser editor, live code execution, Excalidraw canvas, and real-time AI assistance via GPT-5. Features hybrid SSR for SEO and fast page loads.",
+      "techTags": [
+        "Astro",
+        "React",
+        "Django",
+        "OpenAI",
+        "Redis"
+      ],
+      "mainTech": "Astro, Django",
+      "preview": true
+    },
+    {
+      "name": "ResumeVibe",
+      "url": "https://resumevibe.takovibe.com",
+      "description": "AI-powered ATS Resume Optimizer. Analyzes job descriptions to identify keyword gaps and features a multi-stage AI workflow (audit, strategy, rewrite) using real-time streaming GPT-5 to tailor resumes in under 5 minutes.",
+      "techTags": [
+        "Django",
+        "OpenAI",
+        "React"
+      ],
+      "mainTech": "Django, OpenAI GPT",
+      "preview": true
+    },
     {
       "name": "CodeDiff",
       "url": "https://codediff.takovibe.com/",
@@ -130,18 +135,6 @@
       "preview": true
     },
     {
-      "name": "TakoVibe",
-      "url": "https://takovibe.com",
-      "description": "Personal blog covering technology, development experiences, and thought leadership in software engineering.",
-      "techTags": [
-        "Astro",
-        "Blog",
-        "Tech"
-      ],
-      "mainTech": "Astro",
-      "preview": true
-    },
-    {
       "name": "LAAIT Programming Language",
       "url": "https://github.com/rahulbeniwal26119/laait",
       "description": "A lightweight interpreter featuring dynamic typing, first-class functions, and support for various data types. Includes a Jupyter-style notebook for interactive coding.",
@@ -151,17 +144,6 @@
         "Language Design"
       ],
       "mainTech": "Go"
-    },
-    {
-      "name": "PMusic",
-      "url": "https://github.com/rahulbeniwal26119/pmusic",
-      "description": "A backend service capable of streaming any media type over the internet. Built with Django and MongoDB for efficient media handling and storage.",
-      "techTags": [
-        "Django",
-        "MongoDB",
-        "Streaming"
-      ],
-      "mainTech": "Django, MongoDB"
     },
     {
       "name": "Docker and K8 Examples",
@@ -209,18 +191,17 @@
         "name": "Medium",
         "url": "https://rahulbeniwal26119.medium.com/",
         "description": "Technical articles and insights on software development, backend engineering, and programming best practices.",
-        "icon": "📝",
+        "icon": "\ud83d\udcdd",
         "logo": "https://www.svgrepo.com/show/354057/medium-icon.svg",
         "featured": true
       },
       {
         "name": "TakoVibe",
-        "url": "https://takovibe.com",
+        "url": "https://takovibe.com/blog",
         "description": "Personal blog covering technology, development experiences, and thought leadership in software engineering.",
-        "icon": "🌐",
+        "icon": "\ud83c\udf10",
         "logo": "https://takovibe.com/images/logo.svg",
-        "featured": true,
-        "preview": true
+        "featured": true
       }
     ],
     "highlights": [
@@ -232,95 +213,83 @@
   },
   "openSourceContributions": [
     {
-      "organization": "@AnswerDotAI",
-      "url": "https://github.com/AnswerDotAI",
-      "description": "Fixed bugs in Utility Functions"
+      "organization": "fastcore (Answer.AI)",
+      "url": "https://github.com/fastai/fastcore/pull/596",
+      "description": "Core utility improvements & bug fixes (#596)"
     },
     {
-      "organization": "@CRED-CLUB",
-      "url": "https://github.com/CRED-CLUB",
-      "description": "Fixed issues in DevOps"
+      "organization": "nvm-sh/nvm",
+      "url": "https://github.com/nvm-sh/nvm",
+      "description": "ARM64 macOS compatibility fixes for legacy Node versions(#3709, #3718)"
     },
     {
-      "organization": "@nvm-sh",
-      "url": "https://github.com/nvm-sh",
-      "description": "Fixed Multiple Issues including support for node < 16 installation on arm64 Macs"
+      "organization": "CRED Propeller",
+      "url": "https://github.com/CRED-CLUB/propeller",
+      "description": "Internal tooling & reliability improvements(#67)"
     }
   ],
   "achievements": [
     {
-      "icon": "⭐",
-      "title": "Technical Excellence",
-      "description": "5-Star C and Python Coder on HackerRank"
-    },
-    {
-      "icon": "🏆",
+      "icon": "\ud83c\udfc6",
       "title": "Academic Achievement",
       "description": "B.Tech Gold Medalist"
     },
     {
-      "icon": "🌟",
+      "icon": "\ud83c\udf1f",
       "title": "Professional Recognition",
       "description": "Acknowledged by Engineering Head for outstanding contributions at LiveEasy"
     },
     {
-      "icon": "🎓",
+      "icon": "\ud83c\udf93",
       "title": "Academic Performance",
       "description": "Maintained 8.72 CGPA in B.Tech (C.S.E.)"
+    },
+    {
+      "icon": "\ud83d\udcdc",
+      "title": "Certifications",
+      "description": "IBM RAG and Agentic AI Professional Certificate - Coursera"
     }
   ],
   "skills": {
-    "Programming Languages": [
-      "Python",
+    "Languages & Frameworks": [
+      "Python (Django, DRF, FastAPI)",
+      "JavaScript (Astro)",
+      "SQL",
       "Go",
-      "Rust",
-      "Java",
-      "C",
-      "JavaScript"
+      "C"
     ],
-    "Web Development": [
-      "Django",
-      "Celery",
-      "FastAPI",
-      "HTML5",
-      "CSS",
-      "jQuery",
-      "Astro",
-      "React",
-      "TailwindCSS"
-    ],
-    "Database Management": [
-      "PostgreSQL",
+    "Backend & Architecture": [
+      "System Design (HLD/LLD)",
+      "REST API design",
+      "PostgreSQL (Optimization)",
       "Redis",
-      "MongoDB",
-      "Database Optimization"
+      "OAuth2.0 / Keycloak",
+      "Celery"
     ],
-    "DevOps & Cloud": [
-      "Docker",
-      "Kubernetes",
-      "Google Cloud Platform",
+    "AI, Agents & Datastores": [
+      "Agentic AI",
+      "LangGraph",
+      "LangChain",
+      "LLM integrations",
+      "RAG pipelines",
+      "Vector Databases (ChromaDB, Qdrant)",
+      "Embeddings"
+    ],
+    "DevOps, Cloud & Tooling": [
       "AWS",
-      "Nginx"
-    ],
-    "Development Tools": [
-      "Git",
-      "VIM",
-      "Linux",
-      "Data Structures",
-      "Algorithms"
-    ],
-    "Core Competencies": [
-      "System Integration",
-      "Performance Optimization",
-      "Unit Testing",
-      "API Design"
+      "Docker",
+      "Kubernetes (exposure)",
+      "CI/CD (Jenkins)",
+      "Cursor",
+      "Antigravity",
+      "Linux"
     ]
   },
   "education": [
     {
       "degree": "B.Tech (C.S.E.)",
       "institution": "Sanskriti University",
-      "period": "Aug '18 – May '22",
+      "period": "Aug '18 \u2013 May '22",
       "cgpa": "8.72",
       "accomplishments": [
         "Gold Medalist"

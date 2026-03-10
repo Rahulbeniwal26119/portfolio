@@ -12,13 +12,12 @@ import Contact from "./Contact.astro";
 import ProjectModal from "./ProjectModal.astro";
 import ThemeToggle from "./ThemeToggle.astro";
 import ScrollToTop from "./ScrollToTop.astro";
-import MouseFollower from "./MouseFollower.astro";
 
 const { config } = data;
 ---
 
 <div
-  class="relative min-h-screen overflow-hidden bg-background text-text transition-colors duration-300 selection:bg-primary selection:text-white"
+  class="relative min-h-screen bg-background text-text transition-colors duration-300 selection:bg-primary selection:text-white"
 >
   {
     config?.underConstruction && (
@@ -27,17 +26,14 @@ const { config } = data;
       </div>
     )
   }
-  <MouseFollower />
-  <ThemeToggle />
-
   <Hero />
 
-  <!-- Main Content with Smooth Scroll -->
-  <div class="relative z-10" data-scroll-container>
+  <!-- Main Content -->
+  <div class="relative z-10">
     <div class="max-w-7xl mx-auto px-6 md:px-12">
       {
         config?.sectionOrder?.map((sectionName) => {
-          const isEnabled = config?.sections?.[sectionName];
+          const isEnabled = config?.sections?.[sectionName as keyof typeof config.sections];
           if (!isEnabled) return null;
 
           switch (sectionName) {
@@ -70,98 +66,7 @@ const { config } = data;
 </div>
 
 <script>
-  import gsap from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-  import Lenis from "@studio-freight/lenis";
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  // Smooth scroll
-  const initSmoothScroll = () => {
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Default easing
-      touchMultiplier: 2,
-    });
-
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-  };
-
-  // Animations
-  const initAnimations = () => {
-    // Hero section animations
-    gsap.to("#hero-title", {
-      opacity: 1,
-      y: 0,
-      duration: 1,
-      delay: 0.5,
-    });
-    gsap.to("#hero-subtitle", {
-      opacity: 1,
-      y: 0,
-      duration: 1,
-      delay: 0.7,
-    });
-    gsap.to("#hero-summary", {
-      opacity: 1,
-      y: 0,
-      duration: 1,
-      delay: 0.9,
-    });
-    gsap.to("#hero-contacts", {
-      opacity: 1,
-      y: 0,
-      duration: 1,
-      delay: 1.1,
-    });
-
-    // Reveal animations for sections
-    gsap.utils.toArray(".reveal-section").forEach((section: any) => {
-      gsap.from(section, {
-        scrollTrigger: {
-          trigger: section,
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none none reverse",
-        },
-        opacity: 0,
-        y: 50,
-        duration: 1,
-      });
-    });
-
-    // Card reveal animations
-    gsap.utils.toArray(".reveal-card").forEach((card: any) => {
-      gsap.from(card, {
-        scrollTrigger: {
-          trigger: card,
-          start: "top 85%",
-          end: "bottom 20%",
-          toggleActions: "play none none reverse",
-        },
-        opacity: 0,
-        y: 30,
-        duration: 0.8,
-      });
-    });
-
-    gsap.to("#hero-social", {
-      opacity: 1,
-      y: 0,
-      duration: 1,
-      delay: 1.1,
-    });
-  };
-
-  // Initialize everything
-  document.addEventListener("DOMContentLoaded", () => {
-    initSmoothScroll();
-    initAnimations();
-  });
+  // Clean basic script init if necessary
 </script>
 
 <style>

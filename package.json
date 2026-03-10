@@ -10,9 +10,7 @@
   },
   "dependencies": {
     "@astrojs/tailwind": "^6.0.2",
-    "@studio-freight/lenis": "^1.0.42",
-    "astro": "^5.16.4",
-    "gsap": "^3.12.5"
+    "astro": "^5.16.4"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",

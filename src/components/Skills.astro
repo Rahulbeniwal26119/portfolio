@@ -3,28 +3,32 @@ import data from "../data.json";
 import Section from "./Section.astro";
 ---
 
-<Section id="skills">
-    <h2
-        class="text-4xl md:text-6xl font-black font-display text-transparent bg-clip-text bg-gradient-to-r from-text to-text/50 mb-16 tracking-tight dark:from-white dark:to-white/50"
-    >
-        {data.sectionTitles?.skills}
-    </h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {
-            Object.entries(data.skills || {}).map(([category, skills]) => (
-                <div class="bg-surface/30 rounded-lg p-6 hover:bg-surface/40 transition-all reveal-card border border-black/5 dark:border-white/5">
-                    <h3 class="text-lg font-medium text-primary mb-4">
-                        {category}
-                    </h3>
-                    <div class="flex flex-wrap gap-2">
-                        {skills.map((skill) => (
-                            <span class="px-3 py-1 rounded-full bg-surface/50 text-sm text-text-muted border border-black/5 dark:border-white/5">
-                                {skill}
-                            </span>
-                        ))}
-                    </div>
-                </div>
-            ))
-        }
+<Section id="skills" className="relative max-w-7xl mx-auto py-24">
+    <div class="mb-16">
+        <h2 class="text-xl md:text-2xl font-mono text-primary tracking-widest uppercase mb-2">03 // SKILLS</h2>
+        <div class="w-full h-px bg-gradient-to-r from-primary/30 to-transparent"></div>
     </div>
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {
+      Object.entries(data.skills || {}).map(([category, skills]) => (
+        <div class="glass-panel p-8 group overflow-hidden relative">
+          <!-- Ambient glow based on category hover -->
+          <div class="absolute -right-10 -bottom-10 w-32 h-32 bg-primary/0 rounded-full blur-3xl group-hover:bg-primary/20 transition-colors duration-700 pointer-events-none"></div>
+          
+          <h3 class="text-xl font-mono font-bold text-accent mb-6 uppercase tracking-wider relative z-10 flex items-center gap-3">
+            <span class="w-2 h-2 rounded-sm bg-accent/50 group-hover:bg-accent animate-pulse"></span>
+            {category}
+          </h3>
+          <div class="flex flex-wrap gap-2 relative z-10">
+            {skills.map((skill) => (
+              <span class="px-3 py-1.5 rounded bg-white/5 border border-white/10 text-sm font-medium text-white/80 hover:bg-primary/10 hover:border-primary/50 hover:text-primary transition-colors duration-300">
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))
+    }
+  </div>
 </Section>
