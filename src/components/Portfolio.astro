@@ -10,19 +10,18 @@ import Education from "./Education.astro";
 import Achievements from "./Achievements.astro";
 import Contact from "./Contact.astro";
 import ProjectModal from "./ProjectModal.astro";
-import ThemeToggle from "./ThemeToggle.astro";
 import ScrollToTop from "./ScrollToTop.astro";
 
 const { config } = data;
 ---
 
 <div
-  class="relative min-h-screen bg-background text-text transition-colors duration-300 selection:bg-primary selection:text-white"
+  class="relative min-h-screen bg-background text-text transition-colors duration-300"
 >
   {
     config?.underConstruction && (
       <div class="fixed top-0 left-0 w-full bg-yellow-500 text-black text-center py-2 z-50 animate-fade-in">
-        🚧 Site under construction – updates coming soon!
+        Site under construction - updates coming soon.
       </div>
     )
   }
@@ -65,35 +64,9 @@ const { config } = data;
   <ScrollToTop />
 </div>
 
-<script>
-  // Clean basic script init if necessary
-</script>
-
 <style>
-  /* Your existing animations */
-  @keyframes gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-
-  .animate-gradient {
-    animation: gradient 15s ease infinite;
-    background-size: 200% 200%;
-  }
-
   .animate-fade-in {
     animation: fadeIn 1s ease-out;
-  }
-
-  .animate-slide-up {
-    animation: slideUp 0.8s ease-out;
   }
 
   @keyframes fadeIn {
@@ -102,17 +75,6 @@ const { config } = data;
     }
     to {
       opacity: 1;
-    }
-  }
-
-  @keyframes slideUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
     }
   }
 </style>

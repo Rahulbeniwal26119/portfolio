@@ -3,67 +3,50 @@ import data from "../data.json";
 import Section from "./Section.astro";
 ---
 
-<Section id="projects" className="relative max-w-7xl mx-auto py-24">
+<Section id="projects" className="relative max-w-7xl mx-auto">
     <div class="mb-16">
-        <h2 class="text-xl md:text-2xl font-mono text-primary tracking-widest uppercase mb-2">02 // PROJECTS</h2>
-        <div class="w-full h-px bg-gradient-to-r from-primary/30 to-transparent"></div>
+        <h2 class="section-heading">02 / Projects</h2>
+        <div class="section-rule"></div>
     </div>
 
-    <!-- Asymmetric CSS Grid -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {data.projects?.map((project, index) => (
             <div
-                class={`group relative glass-panel glass-panel-hover flex flex-col justify-between overflow-hidden transition-all duration-500 min-h-[400px]
+                class={`group relative glass-panel glass-panel-hover flex flex-col justify-between overflow-hidden min-h-[340px]
                 ${(index === 0 || index === 3) ? "lg:col-span-2" : "col-span-1"}`}
             >
-                <!-- Background Abstract SVG Graphic -->
-                <div class="absolute inset-0 z-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none">
-                    <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-                        <line x1="0" y1="20" x2="100" y2="20" stroke="currentColor" stroke-width="0.5" stroke-dasharray="2,4" />
-                        <line x1="0" y1="40" x2="100" y2="40" stroke="currentColor" stroke-width="0.5" stroke-dasharray="2,4" />
-                        <line x1="0" y1="60" x2="100" y2="60" stroke="currentColor" stroke-width="0.5" stroke-dasharray="2,4" />
-                        <line x1="0" y1="80" x2="100" y2="80" stroke="currentColor" stroke-width="0.5" stroke-dasharray="2,4" />
-                        <path d="M 0,100 C 25,80 50,20 100,0" stroke="var(--color-primary)" fill="none" stroke-width="0.5" opacity="0.5" />
-                    </svg>
-                </div>
-                
-                <!-- Content Top -->
                 <div class="relative z-10 flex flex-col p-8 select-none">
                     <div class="flex justify-between items-start mb-6 w-full">
                         <div class="flex items-center gap-3">
-                            <span class="relative flex h-3 w-3">
-                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
-                                <span class="relative inline-flex rounded-full h-3 w-3 bg-[#00FF00]"></span>
-                            </span>
-                            <span class="font-mono text-xs tracking-widest text-[#00FF00] uppercase">Deployed</span>
+                            <span class="h-2.5 w-2.5 rounded-full bg-accent"></span>
+                            <span class="text-xs font-semibold tracking-[0.14em] text-accent uppercase">Deployed</span>
                         </div>
                         {project.url && project.preview ? (
-                            <button data-preview-url={project.url} class="preview-btn group/btn flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-primary hover:bg-primary/20 hover:border-primary transition-colors cursor-pointer">
-                                <span class="text-[10px] font-mono uppercase tracking-widest">Live Preview</span>
+                            <button data-preview-url={project.url} class="preview-btn group/btn flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/5 border border-primary/15 text-primary hover:bg-primary/10 hover:border-primary/30 transition-colors cursor-pointer">
+                                <span class="text-[10px] font-semibold uppercase tracking-[0.14em]">Preview</span>
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
                             </button>
                         ) : project.url ? (
-                            <a href={project.url} target="_blank" rel="noopener noreferrer" class="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-primary hover:bg-primary/20 hover:border-primary transition-colors cursor-pointer group/link">
+                            <a href={project.url} target="_blank" rel="noopener noreferrer" class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/5 border border-primary/15 text-primary hover:bg-primary/10 hover:border-primary/30 transition-colors cursor-pointer group/link">
                                 <span class="sr-only">External Link</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5 transition-transform"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
                             </a>
                         ) : null}
                     </div>
                     
-                    <h3 class="text-3xl lg:text-4xl font-heading font-bold text-white tracking-tight mb-4 group-hover:text-primary transition-colors duration-300">
+                    <h3 class="text-2xl lg:text-3xl font-heading font-semibold text-text tracking-normal mb-4 group-hover:text-primary transition-colors duration-300">
                         {project.name}
                     </h3>
                     
-                    <p class="text-muted text-base lg:text-lg leading-relaxed max-w-xl group-hover:text-white/80 transition-colors duration-300">
+                    <p class="text-muted text-base leading-relaxed max-w-xl">
                         {project.description}
                     </p>
                 </div>
 
-                <!-- Content Bottom -->
                 <div class="relative z-10 p-8 mt-auto flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4">
                     <div class="flex flex-wrap gap-2">
                         {project.techTags?.map((tech) => (
-                            <span class="px-3 py-1 text-xs font-mono font-medium border border-white/10 bg-white/5 text-muted hover:border-accent hover:text-accent transition-colors rounded">
+                            <span class="chip">
                                 {tech}
                             </span>
                         ))}

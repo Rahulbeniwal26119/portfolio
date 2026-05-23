@@ -3,58 +3,63 @@ import data from "../data.json";
 import Section from "./Section.astro";
 ---
 
-<Section id="experience" className="relative max-w-5xl mx-auto py-24">
+<Section id="experience" className="relative max-w-5xl mx-auto">
     <div class="mb-16">
-        <h2 class="text-xl md:text-2xl font-mono text-primary tracking-widest uppercase mb-2">01 // EXPERIENCE</h2>
-        <div class="w-full h-px bg-gradient-to-r from-primary/30 to-transparent"></div>
+        <h2 class="section-heading">01 / Experience</h2>
+        <div class="section-rule"></div>
     </div>
 
-    <!-- Timeline wrapper -->
     <div class="relative pl-8 md:pl-12">
-        <!-- Glowing vertical line -->
-        <div class="absolute left-[3px] md:left-4 top-0 bottom-0 w-[2px] bg-white/10">
-            <div class="absolute top-0 w-full h-[30%] bg-gradient-to-b from-primary via-primary to-transparent blur-sm animate-pulse"></div>
-            <div class="absolute top-0 w-full h-[50%] bg-gradient-to-b from-primary/80 to-transparent"></div>
+        <div class="absolute left-[3px] top-2 bottom-2 w-px bg-white/10 md:left-4">
+            <div class="absolute top-0 h-28 w-full bg-gradient-to-b from-primary/60 to-transparent"></div>
         </div>
 
-        <div class="space-y-16">
+        <div class="space-y-10">
             {data.professionalExperience?.map((job) => (
                 <div class="relative group">
-                    <!-- Timeline Node -->
-                    <div class="absolute -left-10 md:-left-[2.75rem] top-8 w-4 h-4 rounded-full bg-background border-2 border-primary shadow-[0_0_15px_#00E5FF] group-hover:scale-125 group-hover:bg-primary transition-all duration-300 z-10">
-                        <div class="absolute inset-0 bg-primary/20 rounded-full animate-ping"></div>
-                    </div>
+                    <div class="absolute -left-10 top-7 z-10 h-4 w-4 rounded-full border-[3px] border-background bg-primary shadow-sm transition-transform duration-300 group-hover:scale-110 md:-left-[2.45rem]"></div>
 
-                    <div class="glass-panel p-6 md:p-8 relative overflow-hidden group-hover:border-primary/30 transition-colors duration-500">
-                        <!-- Abstract overlay -->
-                        <div class="absolute -right-20 -top-20 w-40 h-40 bg-accent/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors duration-700"></div>
-
-                        <h3 class="text-2xl md:text-3xl font-heading font-bold text-white mb-2 relative z-10">
+                    <div class="glass-panel glass-panel-hover p-6 md:p-8">
+                        <h3 class="text-2xl md:text-3xl font-heading font-semibold text-text mb-2">
                             {job.title}
                         </h3>
-                        <div class="font-mono text-accent text-sm md:text-base mb-6 tracking-wide flex flex-col md:flex-row md:items-center gap-2 md:gap-4 relative z-10">
-                            <span>{job.company}</span>
-                            <span class="hidden md:inline text-white/20">|</span>
+                        <div class="text-accent text-sm md:text-base mb-6 flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
+                            {job.companyUrl ? (
+                                <a
+                                    href={job.companyUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="transition-colors hover:text-primary"
+                                >
+                                    {job.company}
+                                </a>
+                            ) : (
+                                <span>{job.company}</span>
+                            )}
+                            <span class="hidden md:inline text-white/25">/</span>
                             <span>{job.period}</span>
                         </div>
 
-                        <!-- Tech Stack Row -->
-                        <div class="flex flex-wrap gap-2 mb-8 relative z-10">
-                            {job.tech?.map((tech) => (
-                                <span class="px-3 py-1 text-xs font-mono font-medium border border-primary/20 bg-primary/5 text-primary rounded">
-                                    {tech}
-                                </span>
-                            ))}
-                        </div>
+                        {job.tech?.length ? (
+                            <div class="flex flex-wrap gap-2 mb-8">
+                                {job.tech.map((tech) => (
+                                    <span class="chip">
+                                        {tech}
+                                    </span>
+                                ))}
+                            </div>
+                        ) : null}
 
-                        <ul class="space-y-4 relative z-10">
-                            {job.highlights?.map((highlight) => (
-                                <li class="text-muted text-base leading-relaxed flex items-start gap-3">
-                                    <span class="text-primary mt-1 font-mono text-sm">></span>
-                                    <span>{highlight}</span>
-                                </li>
-                            ))}
-                        </ul>
+                        {job.highlights?.length ? (
+                            <ul class="space-y-4">
+                                {job.highlights.map((highlight) => (
+                                    <li class="text-muted text-base leading-relaxed flex items-start gap-3">
+                                        <span class="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-primary/70"></span>
+                                        <span>{highlight}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        ) : null}
                     </div>
                 </div>
             ))}

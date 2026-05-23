@@ -3,53 +3,40 @@ import data from "../data.json";
 import Section from "./Section.astro";
 ---
 
-<Section id="contact" className="relative max-w-4xl mx-auto py-32 text-center">
-    <!-- Section Header -->
-    <div class="mb-16 flex flex-col items-center">
-        <h2 class="text-xl md:text-2xl font-mono text-primary tracking-widest uppercase mb-2">04 // CONTACT</h2>
-        <div class="w-24 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
-    </div>
+<Section id="contact" className="relative max-w-4xl mx-auto text-center">
+  <div class="mb-12 flex flex-col items-center">
+    <h2 class="section-heading">08 / Contact</h2>
+    <div class="mt-4 h-px w-28 bg-gradient-to-r from-transparent via-primary/40 to-transparent"></div>
+  </div>
 
-    <div class="glass-panel p-12 md:p-16 flex flex-col items-center relative overflow-hidden group">
-        <!-- Abstract overlay -->
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,229,255,0.05)_0%,transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+  <div class="glass-panel p-8 md:p-12">
+    <h3 class="text-4xl md:text-5xl font-heading font-semibold text-text mb-5">
+      Let's build something useful.
+    </h3>
 
-        <h3 class="text-4xl md:text-5xl font-heading font-bold text-white mb-6 relative z-10">
-            Get In Touch
-        </h3>
+    <p class="text-lg text-muted font-body mb-9 max-w-2xl mx-auto leading-relaxed">
+      I'm open to backend engineering, AI integration, platform reliability, and product-minded engineering conversations.
+    </p>
 
-        <p class="text-lg text-muted font-body mb-10 max-w-lg relative z-10">
-            I'm always open to discussing product design work, engaging engineering roles, or partnership opportunities.
-        </p>
+    <a href="https://takovibe.com/contact/" target="_blank" rel="noopener noreferrer" class="button-primary">
+      Send Message
+    </a>
 
+    <div class="mt-10 flex flex-wrap justify-center gap-3">
+      {Object.entries(data.hero?.social || {}).map(([platform, url]) => (
         <a
-            href={`mailto:${data.hero?.contacts?.email}`}
-            class="relative z-10 px-8 py-4 bg-primary text-[#05020A] font-mono font-bold tracking-widest uppercase text-sm rounded hover:shadow-[0_0_40px_rgba(0,229,255,0.4)] transition-all duration-300 transform hover:-translate-y-1"
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="button-secondary px-4 py-2 text-xs uppercase tracking-[0.12em]"
         >
-            Send Message
+          {platform}
         </a>
-
-        <div class="flex gap-6 mt-12 relative z-10">
-            {Object.entries(data.hero?.social || {}).map(([platform, url]) => (
-                <a
-                    href={url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="w-12 h-12 flex flex-col items-center justify-center rounded-full bg-white/5 border border-white/10 text-muted hover:text-primary hover:border-primary/50 hover:bg-primary/10 transition-all duration-300 uppercase text-[10px] font-mono tracking-widest"
-                >
-                    {platform.slice(0, 3)}
-                </a>
-            ))}
-        </div>
+      ))}
     </div>
+  </div>
 
-    <!-- Footer Terminal Closure -->
-    <div class="mt-32 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-muted font-mono text-xs md:text-sm">
-        <p class="flex items-center gap-2">
-            <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
-            System // {data.hero?.title?.toUpperCase()} © {new Date().getFullYear()}
-        </p>
-            All Rights Reserved
-        </p>
-    </div>
+  <footer class="mt-20 border-t border-white/10 pt-8 text-sm text-muted">
+    <p>{data.hero?.title} (c) {new Date().getFullYear()} - All Rights Reserved</p>
+  </footer>
 </Section>

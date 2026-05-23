@@ -25,8 +25,8 @@
   },
   "hero": {
     "title": "Rahul Beniwal",
-    "subtitle": "Senior Backend Engineer - AI Integration Specialist",
-    "summary": "Backend engineer with 4+ years of experience building scalable microservices and high-performance backend systems in Python. Proven experience designing REST APIs using Django and DRF, applying system design principles to deliver low-latency and reliable platforms. Experienced in integrating Agentic AI and LLM workflows using LangGraph, LangChain, and vector databases, and deploying production systems on AWS with Docker and CI/CD.",
+    "subtitle": "Backend Engineer building reliable APIs, systems, and AI workflows.",
+    "summary": "4+ years building scalable Python backends, Django APIs, microservices, and production AI integrations across real estate, fintech, and developer tools.",
     "scrollText": "Scroll to Explore",
     "contacts": {
       "email": "rahulbeniwal26119@gmail.com",
@@ -51,14 +51,24 @@
   },
   "professionalExperience": [
     {
+      "title": "SDE II",
+      "company": "Nutrabay",
+      "companyUrl": "https://nutrabay.com/",
+      "period": "May 2026 - Present",
+      "highlights": [
+        "Joined Nutrabay as SDE II, working with one of India's fastest-growing supplement commerce brands."
+      ]
+    },
+    {
       "title": "Software Developer II",
       "company": "LiveEasy (Acquired by Appfolio)",
-      "period": "02/2023 - Present",
+      "companyUrl": "https://www.liveeasy.com/",
+      "period": "02/2023 - May 2026",
       "location": "Ohio, United States",
       "highlights": [
         "Engineered a custom metaclass-based caching layer and ORM strategy that reduced database queries by 90% (900 to 86) and slashed API latency from 3 minutes to 3 seconds by implementing server-side caching, query batching and optimized indexes",
         "Designed and implemented microservices and REST APIs to power internal dashboards used by admins to track revenue and key business metrics across 800+ brokerages, collaborating directly with CFO and marketing teams while maintaining API latencies under 3 seconds.",
-        "Built and maintained 20+ mission-critical integrations (Verizon, MoxiWorks, Regal, Century 21, Howard Hanna) using Celery and Redis, enabling large-scale data synchronization across platforms serving millions of users.",
+        "Built and maintained 30+ mission-critical integrations with top real estate and analytics brands, including Verizon, MoxiWorks, Regal, Century 21, and Howard Hanna, using Celery and Redis to enable large-scale data synchronization across platforms serving millions of users.",
         "Architected and implemented an OAuth2.0 authentication microservice by extending Keycloak through custom SPIs and source-level modifications, standardizing SSO and RBAC while securing internal security approval for rollout.",
         "Collaborated with product and cloud teams to deploy containerized services on AWS using Docker and CI/CD pipelines, reducing deployment lead time by 60% through automated builds and IaC patterns"
       ],
@@ -76,6 +86,7 @@
     {
       "title": "Software Developer",
       "company": "LendenClub",
+      "companyUrl": "https://www.lendenclub.com/",
       "period": "07/2021 - 01/2023",
       "location": "Goregaon West, Mumbai",
       "highlights": [
@@ -99,7 +110,7 @@
     {
       "name": "TakoVibe",
       "url": "https://takovibe.com",
-      "description": "Full-Stack Tech-Education Platform. Developer-focused platform with a rich in-browser editor, live code execution, Excalidraw canvas, and real-time AI assistance via GPT-5. Features hybrid SSR for SEO and fast page loads.",
+      "description": "Interactive tech learning platform with 1,000+ readers. Built AI-assisted reading, Kumi AI debugging, runnable playgrounds, visual notes, LLD workspaces, and embeddable code execution.",
       "techTags": [
         "Astro",
         "React",
@@ -113,7 +124,7 @@
     {
       "name": "ResumeVibe",
       "url": "https://resumevibe.takovibe.com",
-      "description": "AI-powered ATS Resume Optimizer. Analyzes job descriptions to identify keyword gaps and features a multi-stage AI workflow (audit, strategy, rewrite) using real-time streaming GPT-5 to tailor resumes in under 5 minutes.",
+      "description": "AI-powered ATS resume builder used by 200+ people. Built diagnostics, ATS-friendly layouts, public resume links, versioning, and AI rewrites for stronger recruiter impact.",
       "techTags": [
         "Django",
         "OpenAI",
@@ -125,7 +136,7 @@
     {
       "name": "CodeDiff",
       "url": "https://codediff.takovibe.com/",
-      "description": "Professional online code diff tool supporting 18+ programming languages with syntax highlighting and side-by-side view.",
+      "description": "Professional code review tool supporting 18+ languages. Built browser-based diffing and patch review for GitHub PRs, commits, compares, raw patches, and uploaded patch files.",
       "techTags": [
         "React",
         "Diff Tool",
@@ -198,7 +209,7 @@
       {
         "name": "TakoVibe",
         "url": "https://takovibe.com/blog",
-        "description": "Personal blog covering technology, development experiences, and thought leadership in software engineering.",
+        "description": "In-house tech learning platform for students and professionals, focused on practical engineering concepts, developer tools, and hands-on technical content.",
         "icon": "\ud83c\udf10",
         "logo": "https://takovibe.com/images/logo.svg",
         "featured": true

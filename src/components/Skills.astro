@@ -3,26 +3,23 @@ import data from "../data.json";
 import Section from "./Section.astro";
 ---
 
-<Section id="skills" className="relative max-w-7xl mx-auto py-24">
+<Section id="skills" className="relative max-w-7xl mx-auto">
     <div class="mb-16">
-        <h2 class="text-xl md:text-2xl font-mono text-primary tracking-widest uppercase mb-2">03 // SKILLS</h2>
-        <div class="w-full h-px bg-gradient-to-r from-primary/30 to-transparent"></div>
+        <h2 class="section-heading">03 / Skills</h2>
+        <div class="section-rule"></div>
     </div>
   
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
     {
       Object.entries(data.skills || {}).map(([category, skills]) => (
-        <div class="glass-panel p-8 group overflow-hidden relative">
-          <!-- Ambient glow based on category hover -->
-          <div class="absolute -right-10 -bottom-10 w-32 h-32 bg-primary/0 rounded-full blur-3xl group-hover:bg-primary/20 transition-colors duration-700 pointer-events-none"></div>
-          
-          <h3 class="text-xl font-mono font-bold text-accent mb-6 uppercase tracking-wider relative z-10 flex items-center gap-3">
-            <span class="w-2 h-2 rounded-sm bg-accent/50 group-hover:bg-accent animate-pulse"></span>
+        <div class="glass-panel glass-panel-hover p-8 group">
+          <h3 class="text-lg font-semibold text-text mb-6 relative z-10 flex items-center gap-3">
+            <span class="w-2 h-2 rounded-full bg-accent/70"></span>
             {category}
           </h3>
           <div class="flex flex-wrap gap-2 relative z-10">
             {skills.map((skill) => (
-              <span class="px-3 py-1.5 rounded bg-white/5 border border-white/10 text-sm font-medium text-white/80 hover:bg-primary/10 hover:border-primary/50 hover:text-primary transition-colors duration-300">
+              <span class="chip text-sm">
                 {skill}
               </span>
             ))}

@@ -3,27 +3,25 @@ import data from "../data.json";
 import Section from "./Section.astro";
 ---
 
-<Section id="open-source" className="relative max-w-7xl mx-auto py-24">
+<Section id="open-source" className="relative max-w-7xl mx-auto">
     <div class="mb-16">
-        <h2 class="text-xl md:text-2xl font-mono text-primary tracking-widest uppercase mb-2">02.5 // OPEN_SOURCE</h2>
-        <div class="w-full h-px bg-gradient-to-r from-primary/30 to-transparent"></div>
+        <h2 class="section-heading">05 / Open Source</h2>
+        <div class="section-rule"></div>
     </div>
 
     <div class="grid md:grid-cols-2 gap-8 mb-16">
         {data.openSourceContributions?.map((contribution) => (
             <div class="glass-panel glass-panel-hover p-8 group relative overflow-hidden flex flex-col justify-between">
-                <div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-colors duration-500 pointer-events-none"></div>
-
                 <div>
                     <div class="flex items-center gap-3 mb-4">
-                        <span class="w-2 h-2 rounded bg-[#00FF00] animate-pulse"></span>
-                        <span class="font-mono text-[10px] tracking-widest text-[#00FF00] uppercase">Contribution</span>
+                        <span class="w-2 h-2 rounded-full bg-accent"></span>
+                        <span class="text-[10px] font-semibold tracking-[0.14em] text-accent uppercase">Contribution</span>
                     </div>
 
             <a
               href={contribution.url}
               target="_blank"
-              class="text-2xl font-heading font-bold text-white group-hover:text-primary transition-colors duration-300 block mb-3"
+              class="text-2xl font-heading font-semibold text-text group-hover:text-primary transition-colors duration-300 block mb-3"
             >
               {contribution.organization}
             </a>
@@ -34,7 +32,7 @@ import Section from "./Section.astro";
           </div>
 
           <a href={contribution.url} target="_blank" class="mt-8 pt-4 border-t border-white/10 flex items-center justify-between text-muted group-hover:text-primary transition-colors duration-300">
-            <span class="font-mono text-xs uppercase tracking-widest">View Contribution</span>
+            <span class="text-xs font-semibold uppercase tracking-[0.14em]">View Contribution</span>
             <svg class="w-4 h-4 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
           </a>
         </div>

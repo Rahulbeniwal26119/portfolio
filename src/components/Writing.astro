@@ -3,23 +3,23 @@ import data from "../data.json";
 import Section from "./Section.astro";
 ---
 
-<Section id="writing" className="relative max-w-7xl mx-auto py-24">
+<Section id="writing" className="relative max-w-7xl mx-auto">
     <div class="mb-16">
-        <h2 class="text-xl md:text-2xl font-mono text-primary tracking-widest uppercase mb-2">03.5 // WRITING & ARTICLES</h2>
-        <div class="w-full h-px bg-gradient-to-r from-primary/30 to-transparent"></div>
+        <h2 class="section-heading">04 / Writing</h2>
+        <div class="section-rule"></div>
     </div>
 
   <div class="grid md:grid-cols-2 gap-8 mb-12">
     {
       data.writing?.platforms?.map((platform) => (
-        <div class="glass-panel p-8 group flex flex-col justify-between">
+        <div class="glass-panel glass-panel-hover p-8 group flex flex-col justify-between">
           <div class="flex items-start justify-between mb-6">
-            <h3 class="text-2xl font-heading font-bold text-white group-hover:text-primary transition-colors">
+            <h3 class="text-2xl font-heading font-semibold text-text group-hover:text-primary transition-colors">
               {platform.name}
             </h3>
             {platform.featured && (
-              <span class="px-2 py-1 text-[10px] font-mono border border-accent/50 text-accent uppercase tracking-widest bg-accent/10 rounded">
-                Featured Node
+              <span class="rounded-full border border-accent/20 bg-accent/5 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-accent">
+                Featured
               </span>
             )}
           </div>
@@ -32,8 +32,8 @@ import Section from "./Section.astro";
             rel="noopener noreferrer"
             class="mt-auto group/btn flex items-center justify-between w-full pb-2 border-b border-white/10 hover:border-primary transition-colors"
           >
-            <span class="font-mono text-sm tracking-widest text-white group-hover/btn:text-primary transition-colors">Read</span>
-            <svg class="w-4 h-4 text-white/30 group-hover/btn:text-primary group-hover/btn:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <span class="text-sm font-semibold tracking-[0.08em] text-text group-hover/btn:text-primary transition-colors">Read</span>
+            <svg class="w-4 h-4 text-muted group-hover/btn:text-primary group-hover/btn:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>
       ))
@@ -43,20 +43,15 @@ import Section from "./Section.astro";
   {
     data.writing?.highlights && (
       <div class="glass-panel p-8 relative overflow-hidden group">
-        <div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-        <div class="absolute top-0 right-4 bg-background px-2 text-[10px] font-mono tracking-widest text-muted -translate-y-1/2">
-          INDEX.DAT
-        </div>
-        
-        <h3 class="text-sm font-mono text-accent mb-6 uppercase tracking-widest">
-          > Core Topics
+        <h3 class="text-sm font-semibold text-accent mb-6 uppercase tracking-[0.14em]">
+          Core Topics
         </h3>
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           {data.writing.highlights.map((highlight) => (
-            <div class="flex items-start gap-3 p-3 border border-white/5 rounded bg-white/5 hover:border-primary/30 transition-colors">
-              <span class="text-primary mt-1 font-mono text-xs">></span>
-              <span class="text-white/80 font-body text-sm leading-relaxed">{highlight}</span>
+            <div class="flex items-start gap-3 rounded-lg border border-white/10 bg-white/5 p-3 transition-colors hover:border-primary/25">
+              <span class="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-primary/70"></span>
+              <span class="text-muted font-body text-sm leading-relaxed">{highlight}</span>
             </div>
           ))}
         </div>

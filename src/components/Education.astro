@@ -3,33 +3,31 @@ import data from "../data.json";
 import Section from "./Section.astro";
 ---
 
-<Section id="education" className="relative max-w-7xl mx-auto py-24">
+<Section id="education" className="relative max-w-7xl mx-auto">
   <div class="mb-16">
-      <h2 class="text-xl md:text-2xl font-mono text-primary tracking-widest uppercase mb-2">05 // EDUCATION</h2>
-      <div class="w-full h-px bg-gradient-to-r from-primary/30 to-transparent"></div>
+      <h2 class="section-heading">07 / Education</h2>
+      <div class="section-rule"></div>
   </div>
 
   <div class="space-y-8">
     {
       data.education?.map((edu) => (
-        <div class="glass-panel p-8 md:p-10 relative overflow-hidden group">
-          <div class="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-colors duration-500 pointer-events-none"></div>
-
-          <div class="flex flex-col md:flex-row md:items-start justify-between gap-6 relative z-10">
+        <div class="glass-panel glass-panel-hover p-8 md:p-10">
+          <div class="flex flex-col md:flex-row md:items-start justify-between gap-6">
             <div class="flex-1">
-              <h3 class="text-2xl md:text-3xl font-heading font-bold text-white mb-2 group-hover:text-primary transition-colors">
+              <h3 class="text-2xl md:text-3xl font-heading font-semibold text-text mb-2 group-hover:text-primary transition-colors">
                 {edu.degree}
               </h3>
-              <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 font-mono text-sm tracking-wide text-accent mb-6">
+              <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 text-sm text-accent mb-6">
                 <span class="text-primary">{edu.institution}</span>
-                <span class="hidden md:inline text-white/20">|</span>
+                <span class="hidden md:inline text-white/25">/</span>
                 <span>{edu.period}</span>
               </div>
 
               {edu.accomplishments && (
                 <div class="flex flex-wrap gap-2">
                   {edu.accomplishments.map((item) => (
-                    <span class="px-3 py-1 text-xs font-mono font-medium border border-white/10 bg-white/5 text-muted hover:border-accent hover:text-accent transition-colors rounded">
+                    <span class="chip">
                       {item}
                     </span>
                   ))}
@@ -37,8 +35,8 @@ import Section from "./Section.astro";
               )}
             </div>
 
-            <div class="mt-4 md:mt-0 flex flex-col items-start md:items-end w-full md:w-auto p-4 border border-white/10 bg-black/40 rounded">
-              <span class="text-[10px] font-mono uppercase tracking-widest text-muted mb-1">GPA</span>
+            <div class="mt-4 md:mt-0 flex flex-col items-start md:items-end w-full md:w-auto rounded-lg border border-white/10 bg-white/5 p-4">
+              <span class="text-[10px] font-semibold uppercase tracking-[0.14em] text-muted mb-1">GPA</span>
               <span class="text-3xl font-heading font-bold text-primary">{edu.cgpa}</span>
             </div>
           </div>

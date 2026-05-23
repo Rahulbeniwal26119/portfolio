@@ -5,18 +5,20 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				primary: 'var(--color-primary)',
-				background: 'var(--color-background)',
-				surface: 'var(--color-surface)',
-				text: 'var(--color-text)',
-				'text-muted': 'var(--color-muted)',
-				accent: 'var(--color-accent)',
+				primary: 'rgb(var(--color-primary) / <alpha-value>)',
+				background: 'rgb(var(--color-background) / <alpha-value>)',
+				surface: 'rgb(var(--color-surface) / <alpha-value>)',
+				text: 'rgb(var(--color-text) / <alpha-value>)',
+				'text-muted': 'rgb(var(--color-muted) / <alpha-value>)',
+				muted: 'rgb(var(--color-muted) / <alpha-value>)',
+				accent: 'rgb(var(--color-accent) / <alpha-value>)',
+				soft: 'rgb(var(--color-soft) / <alpha-value>)',
 			},
 			fontFamily: {
-				heading: ['"Space Grotesk"', 'sans-serif'],
-				body: ['"Outfit"', 'sans-serif'],
-				sans: ['"Outfit"', 'sans-serif'],
-				mono: ['"JetBrains Mono"', 'monospace'],
+				heading: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+				body: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+				sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+				mono: ['"SFMono-Regular"', 'Consolas', '"Liberation Mono"', 'monospace'],
 			},
 			animation: {
 				'float': 'float 6s ease-in-out infinite',
