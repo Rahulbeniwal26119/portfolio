@@ -9,7 +9,7 @@
       "writing": true,
       "skills": true,
       "education": true,
-      "achievements": true,
+      "achievements": false,
       "contact": true,
       "caseStudies": false
     },
@@ -18,8 +18,8 @@
       "caseStudies",
       "projects",
       "skills",
-      "writing",
       "openSource",
+      "writing",
       "achievements",
       "education",
       "contact"
@@ -27,8 +27,8 @@
   },
   "hero": {
     "title": "Rahul Beniwal",
-    "subtitle": "Backend engineer — Python, Django, and distributed systems. I read the source to find out how things actually behave.",
-    "summary": "4+ years on production Python backends: a metaclass-based caching layer that cut database queries by 90% and API latency from 3 minutes to 3 seconds, 30+ integrations syncing data for millions of users, and an OAuth2 service built by extending Keycloak at source level. I write up how these systems work at takovibe.com.",
+    "subtitle": "Backend engineer. I read the source to find out how things actually behave.",
+    "summary": "I work on the parts of a system that only surface under load: query plans, cache invalidation, auth boundaries, and background job throughput. When the documentation runs out I read the implementation, and I write up what I find at takovibe.com.",
     "scrollText": "Scroll to Explore",
     "contacts": {
       "email": "rahulbeniwal26119@gmail.com"
@@ -38,7 +38,28 @@
       "linkedin": "https://www.linkedin.com/in/rahulbeniwal26119/",
       "medium": "https://rahulbeniwal26119.medium.com/",
       "blog": "https://takovibe.com"
-    }
+    },
+    "tech": [
+      "Python",
+      "Django",
+      "PostgreSQL",
+      "Redis",
+      "AWS"
+    ],
+    "stats": [
+      {
+        "value": "900 → 86",
+        "label": "queries on a critical path"
+      },
+      {
+        "value": "3 min → 3 s",
+        "label": "API latency, same endpoint"
+      },
+      {
+        "value": "30+",
+        "label": "production integrations maintained"
+      }
+    ]
   },
   "sectionTitles": {
     "experience": "Professional Experience",
@@ -65,7 +86,7 @@
       "title": "Software Developer II",
       "company": "LiveEasy (Acquired by Appfolio)",
       "companyUrl": "https://www.liveeasy.com/",
-      "period": "02/2023 - May 2026",
+      "period": "Feb 2023 - May 2026",
       "location": "Ohio, United States",
       "highlights": [
         "Engineered a custom metaclass-based caching layer and ORM strategy that reduced database queries by 90% (900 to 86) and slashed API latency from 3 minutes to 3 seconds by implementing server-side caching, query batching and optimized indexes",
@@ -83,13 +104,23 @@
         "Docker",
         "Keycloak",
         "AWS"
+      ],
+      "roles": [
+        {
+          "title": "Software Developer II",
+          "period": "Apr 2025 - May 2026"
+        },
+        {
+          "title": "Software Developer I",
+          "period": "Feb 2023 - Apr 2025"
+        }
       ]
     },
     {
       "title": "Software Developer",
       "company": "LendenClub",
       "companyUrl": "https://www.lendenclub.com/",
-      "period": "07/2021 - 01/2023",
+      "period": "Jul 2021 - Jan 2023",
       "location": "Goregaon West, Mumbai",
       "highlights": [
         "Engineered the \"PMI\" payment gateway interface, reducing payment failure rates from 60% to 20%.",
@@ -212,14 +243,6 @@
         "icon": "✍️",
         "featured": false
       }
-    ],
-    "highlights": [
-      "CPython internals: object model, descriptors, MRO, generators, GC",
-      "System teardowns read from source: Redis, WSGI servers, Nginx",
-      "Django and PostgreSQL performance under real query load",
-      "Distributed systems: consensus, gossip, replication, durability",
-      "Application security: injection classes and how they are actually fixed",
-      "Language implementation: writing an interpreter from scratch"
     ],
     "featured": [
       {

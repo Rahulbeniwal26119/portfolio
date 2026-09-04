@@ -4,12 +4,20 @@ import Section from "./Section.astro";
 
 interface Props { index?: string }
 const { index = "01" } = Astro.props;
+
+// Keys double as button labels, and "blog" is a poor name for the publication.
+const socialLabels: Record<string, string> = {
+  blog: "TakoVibe",
+  github: "GitHub",
+  linkedin: "LinkedIn",
+  medium: "Medium",
+};
 ---
 
 <Section id="contact" className="relative max-w-4xl mx-auto text-center">
   <div class="mb-12 flex flex-col items-center">
     <h2 class="section-heading">{index} / Contact</h2>
-    <div class="mt-4 h-px w-28 bg-gradient-to-r from-transparent via-primary/40 to-transparent"></div>
+    <div class="mt-4 h-px w-28 bg-line"></div>
   </div>
 
   <div class="glass-panel p-8 md:p-12">
@@ -33,7 +41,7 @@ const { index = "01" } = Astro.props;
           rel="noopener noreferrer"
           class="button-secondary px-4 py-2 text-xs uppercase tracking-[0.12em]"
         >
-          {platform}
+          {socialLabels[platform] ?? platform}
         </a>
       ))}
     </div>
