@@ -10,10 +10,12 @@
       "skills": true,
       "education": true,
       "achievements": true,
-      "contact": true
+      "contact": true,
+      "caseStudies": false
     },
     "sectionOrder": [
       "experience",
+      "caseStudies",
       "projects",
       "skills",
       "writing",
@@ -25,12 +27,11 @@
   },
   "hero": {
     "title": "Rahul Beniwal",
-    "subtitle": "Backend Engineer building reliable APIs, systems, and AI workflows.",
-    "summary": "4+ years building scalable Python backends, Django APIs, microservices, and production AI integrations across real estate, fintech, and developer tools.",
+    "subtitle": "Backend engineer — Python, Django, and distributed systems. I read the source to find out how things actually behave.",
+    "summary": "4+ years on production Python backends: a metaclass-based caching layer that cut database queries by 90% and API latency from 3 minutes to 3 seconds, 30+ integrations syncing data for millions of users, and an OAuth2 service built by extending Keycloak at source level. I write up how these systems work at takovibe.com.",
     "scrollText": "Scroll to Explore",
     "contacts": {
-      "email": "rahulbeniwal26119@gmail.com",
-      "phone": "+91 6398486322"
+      "email": "rahulbeniwal26119@gmail.com"
     },
     "social": {
       "github": "https://github.com/rahulbeniwal26119",
@@ -47,7 +48,8 @@
     "skills": "Technical Expertise",
     "education": "Education",
     "contact": "Get In Touch",
-    "achievements": "Achievements & Recognition"
+    "achievements": "Achievements & Recognition",
+    "caseStudies": "Selected Work"
   },
   "professionalExperience": [
     {
@@ -108,118 +110,148 @@
   ],
   "projects": [
     {
+      "name": "LAAIT Programming Language",
+      "url": "https://github.com/rahulbeniwal26119/laait",
+      "description": "A tree-walking interpreter written in Go: lexer, parser, and evaluator with dynamic typing, first-class functions, closures, and built-in data types. Written to understand how language runtimes actually execute code.",
+      "techTags": [
+        "Go",
+        "Interpreter",
+        "Language Design"
+      ]
+    },
+    {
       "name": "TakoVibe",
       "url": "https://takovibe.com",
-      "description": "Interactive tech learning platform with 1,000+ readers. Built AI-assisted reading, Kumi AI debugging, runnable playgrounds, visual notes, LLD workspaces, and embeddable code execution.",
+      "description": "An engineering publication I write and run: 42 long-form articles, a 10-part Advanced Python Internals series, and the tooling around them. Astro and Django, ~50k lines, 300+ commits.",
       "techTags": [
         "Astro",
-        "React",
         "Django",
-        "OpenAI",
+        "React",
+        "PostgreSQL",
         "Redis"
       ],
-      "mainTech": "Astro, Django",
+      "preview": true
+    },
+    {
+      "name": "Vellora",
+      "url": "https://takovibe.com/vellora",
+      "description": "A local-first EPUB and PDF reading workspace with highlights, progress sync, folders, and Kumi — a reading assistant that answers questions about the page you are on. Built after taking apart how e-readers work.",
+      "techTags": [
+        "React",
+        "epub.js",
+        "IndexedDB",
+        "LLM"
+      ],
+      "preview": true
+    },
+    {
+      "name": "Runo",
+      "url": "https://takovibe.com/runo",
+      "description": "A free, self-hosted Postman-style API client. Collections, environments, and request history that stay on your own machine instead of someone else's cloud.",
+      "techTags": [
+        "React",
+        "Self-hosted",
+        "DevTools"
+      ],
       "preview": true
     },
     {
       "name": "ResumeVibe",
       "url": "https://resumevibe.takovibe.com",
-      "description": "AI-powered ATS resume builder used by 200+ people. Built diagnostics, ATS-friendly layouts, public resume links, versioning, and AI rewrites for stronger recruiter impact.",
+      "description": "An AI resume diagnostics tool: ATS-readiness scoring, targeted rewrite suggestions, and shareable public resume links.",
       "techTags": [
         "Django",
-        "OpenAI",
-        "React"
+        "React",
+        "LLM"
       ],
-      "mainTech": "Django, OpenAI GPT",
       "preview": true
     },
     {
       "name": "CodeDiff",
       "url": "https://codediff.takovibe.com/",
-      "description": "Professional code review tool supporting 18+ languages. Built browser-based diffing and patch review for GitHub PRs, commits, compares, raw patches, and uploaded patch files.",
+      "description": "Browser-based diffing and patch review across 18+ languages, for reviewing GitHub patches without leaving the tab.",
       "techTags": [
         "React",
-        "Diff Tool",
+        "Diffing",
         "DevTools"
       ],
-      "mainTech": "React",
       "preview": true
     },
     {
-      "name": "LAAIT Programming Language",
-      "url": "https://github.com/rahulbeniwal26119/laait",
-      "description": "A lightweight interpreter featuring dynamic typing, first-class functions, and support for various data types. Includes a Jupyter-style notebook for interactive coding.",
-      "techTags": [
-        "Interpreter",
-        "Go",
-        "Language Design"
-      ],
-      "mainTech": "Go"
-    },
-    {
-      "name": "Docker and K8 Examples",
-      "url": "https://github.com/Rahulbeniwal26119/docker-and-k8",
-      "description": "A collection of examples demonstrating the use of Docker and Kubernetes for container orchestration.",
-      "techTags": [
-        "Docker",
-        "Kubernetes",
-        "DevOps"
-      ]
-    },
-    {
       "name": "K&R C Solutions",
       "url": "https://github.com/Rahulbeniwal26119/k_-_R_ANS",
-      "description": "Implementation of solutions from the C Programming Language book (K&R), focusing on problem-solving and UNIX philosophy.",
+      "description": "Worked solutions to The C Programming Language, kept as a record of getting comfortable with pointers, memory, and UNIX system calls.",
       "techTags": [
         "C",
         "UNIX"
       ]
-    }
-  ],
-  "additionalProjects": [
+    },
     {
-      "name": "Python Learning Resources",
+      "name": "Python Internals Notebooks",
       "url": "https://github.com/Rahulbeniwal26119/jupyter-ipynbs",
-      "description": "Comprehensive collection of Jupyter notebooks covering advanced Python concepts including concurrency, metaclasses, decorators, and data structures.",
+      "description": "Runnable notebooks on concurrency, metaclasses, descriptors, and the object model — the working notes behind the Python internals writing.",
       "techTags": [
         "Python",
         "Jupyter"
-      ]
-    },
-    {
-      "name": "K&R C Solutions",
-      "url": "https://github.com/Rahulbeniwal26119/k_-_R_ANS",
-      "description": "Implementation of solutions from the C Programming Language book (K&R), focusing on problem-solving and UNIX philosophy.",
-      "techTags": [
-        "C",
-        "UNIX"
       ]
     }
   ],
   "writing": {
     "platforms": [
       {
-        "name": "Medium",
-        "url": "https://rahulbeniwal26119.medium.com/",
-        "description": "Technical articles and insights on software development, backend engineering, and programming best practices.",
-        "icon": "\ud83d\udcdd",
-        "logo": "https://www.svgrepo.com/show/354057/medium-icon.svg",
+        "name": "TakoVibe",
+        "url": "https://takovibe.com/blog",
+        "description": "Where I publish. Long-form backend engineering: language internals, system teardowns read from source, and what production actually does after the happy path ends.",
+        "icon": "📘",
         "featured": true
       },
       {
-        "name": "TakoVibe",
-        "url": "https://takovibe.com/blog",
-        "description": "In-house tech learning platform for students and professionals, focused on practical engineering concepts, developer tools, and hands-on technical content.",
-        "icon": "\ud83c\udf10",
-        "logo": "https://takovibe.com/images/logo.svg",
-        "featured": true
+        "name": "Medium",
+        "url": "https://rahulbeniwal26119.medium.com/",
+        "description": "Earlier writing on Python, Django, and backend practice.",
+        "icon": "✍️",
+        "featured": false
       }
     ],
     "highlights": [
-      "Technical deep-dives on Python and Django",
-      "Backend architecture and system design insights",
-      "DevOps and containerization best practices",
-      "Programming language design and implementation"
+      "CPython internals: object model, descriptors, MRO, generators, GC",
+      "System teardowns read from source: Redis, WSGI servers, Nginx",
+      "Django and PostgreSQL performance under real query load",
+      "Distributed systems: consensus, gossip, replication, durability",
+      "Application security: injection classes and how they are actually fixed",
+      "Language implementation: writing an interpreter from scratch"
+    ],
+    "featured": [
+      {
+        "title": "From SET to Disk: Redis Event Loop, AOF, and RDB From Source Code",
+        "url": "https://takovibe.com/blog/how-redis-set-works",
+        "note": "What one SET actually touches, traced through the C source."
+      },
+      {
+        "title": "How I Built My Own Kindle: Code, Architecture, and System Design Lessons",
+        "url": "https://takovibe.com/blog/kindle-system-design",
+        "note": "The full build: architecture, tradeoffs, and what I got wrong."
+      },
+      {
+        "title": "The Dark Side of Concurrency",
+        "url": "https://takovibe.com/blog/concurrency-essentials",
+        "note": "Where concurrent code breaks, and why the usual advice misses it."
+      },
+      {
+        "title": "Advanced Python Internals — a 10-part series",
+        "url": "https://takovibe.com/series/advanced-python-internals-30-days",
+        "note": "Object model, attribute lookup, descriptors, MRO, generators, GC."
+      },
+      {
+        "title": "Why Gossip Protocol Matters for Distributed Systems",
+        "url": "https://takovibe.com/blog/gossip-protocol",
+        "note": "How nodes agree on cluster state without a coordinator."
+      },
+      {
+        "title": "WSGI Explained: How Gunicorn Connects Python Apps to the Web",
+        "url": "https://takovibe.com/blog/python-wsgi-explained",
+        "note": "The contract every Python web framework is built on."
+      }
     ]
   },
   "openSourceContributions": [
@@ -241,70 +273,184 @@
   ],
   "achievements": [
     {
-      "icon": "\ud83c\udfc6",
-      "title": "Academic Achievement",
-      "description": "B.Tech Gold Medalist"
+      "icon": "⚡",
+      "title": "90% fewer database queries",
+      "description": "Custom metaclass-based caching and ORM strategy took a critical path from 900 queries to 86, and API latency from 3 minutes to 3 seconds."
     },
     {
-      "icon": "\ud83c\udf1f",
-      "title": "Professional Recognition",
-      "description": "Acknowledged by Engineering Head for outstanding contributions at LiveEasy"
+      "icon": "🔗",
+      "title": "30+ production integrations",
+      "description": "Built and maintained data synchronisation with Verizon, MoxiWorks, Century 21, Howard Hanna and others, serving millions of users across 800+ brokerages."
     },
     {
-      "icon": "\ud83c\udf93",
-      "title": "Academic Performance",
-      "description": "Maintained 8.72 CGPA in B.Tech (C.S.E.)"
+      "icon": "🔒",
+      "title": "OAuth2 / SSO at source level",
+      "description": "Extended Keycloak through custom SPIs and source modifications to standardise SSO and RBAC, cleared for rollout by internal security review."
     },
     {
-      "icon": "\ud83d\udcdc",
-      "title": "Certifications",
-      "description": "IBM RAG and Agentic AI Professional Certificate - Coursera"
+      "icon": "💳",
+      "title": "Payment failures cut from 60% to 20%",
+      "description": "Designed the PMI payment gateway interface at LendenClub, tripling successful transaction throughput."
+    },
+    {
+      "icon": "🏆",
+      "title": "B.Tech Gold Medalist",
+      "description": "Ranked first in Computer Science & Engineering; recognised by the Engineering Head at LiveEasy for outstanding contribution."
     }
   ],
   "skills": {
-    "Languages & Frameworks": [
-      "Python (Django, DRF, FastAPI)",
-      "JavaScript (Astro)",
-      "SQL",
+    "Languages": [
+      "Python",
       "Go",
-      "C"
+      "C",
+      "SQL",
+      "JavaScript / TypeScript"
     ],
-    "Backend & Architecture": [
-      "System Design (HLD/LLD)",
-      "REST API design",
-      "PostgreSQL (Optimization)",
+    "Backend & Data": [
+      "Django / DRF",
+      "FastAPI",
+      "PostgreSQL (query optimisation)",
       "Redis",
-      "OAuth2.0 / Keycloak",
-      "Celery"
+      "Celery",
+      "REST API design",
+      "OAuth2 / Keycloak"
     ],
-    "AI, Agents & Datastores": [
-      "Agentic AI",
-      "LangGraph",
-      "LangChain",
+    "Systems & Architecture": [
+      "System design (HLD/LLD)",
+      "Distributed systems",
+      "Caching strategy",
+      "Concurrency",
+      "CPython internals",
+      "Performance profiling"
+    ],
+    "AI & Retrieval": [
       "LLM integrations",
       "RAG pipelines",
-      "Vector Databases (ChromaDB, Qdrant)",
-      "Embeddings"
+      "LangChain / LangGraph",
+      "Embeddings",
+      "Vector stores (ChromaDB, Qdrant)"
     ],
-    "DevOps, Cloud & Tooling": [
-      "AWS",
+    "Infrastructure": [
       "Docker",
-      "Kubernetes (exposure)",
+      "AWS",
+      "Kubernetes",
       "CI/CD (Jenkins)",
-      "Cursor",
-      "Antigravity",
-      "Linux"
+      "Linux",
+      "Nginx"
     ]
   },
   "education": [
     {
       "degree": "B.Tech (C.S.E.)",
       "institution": "Sanskriti University",
-      "period": "Aug '18 \u2013 May '22",
+      "period": "Aug '18 – May '22",
       "cgpa": "8.72",
       "accomplishments": [
         "Gold Medalist"
       ]
+    }
+  ],
+  "caseStudies": [
+    {
+      "title": "The 900-query request",
+      "company": "LiveEasy",
+      "period": "2023 - 2026",
+      "problem": "An internal analytics endpoint served revenue and performance dashboards for 800+ brokerages. A single request issued roughly 900 database queries and took about three minutes to return, which made the dashboards the CFO and marketing teams depended on effectively unusable.",
+      "approach": [
+        "Traced the query fan-out to ORM lazy-loading inside nested serializers, where each row triggered its own follow-up reads.",
+        "Built a metaclass-based caching layer so models opt into server-side caching declaratively at class definition, instead of every call site remembering to cache.",
+        "Batched the reads that genuinely had to hit the database, and added covering indexes for the dominant filter combinations."
+      ],
+      "metrics": [
+        {
+          "label": "Queries per request",
+          "before": "900",
+          "after": "86",
+          "delta": "-90%"
+        },
+        {
+          "label": "Response time",
+          "before": "3 min",
+          "after": "3 s",
+          "delta": "-98%"
+        }
+      ],
+      "tradeoff": "Invalidation moved into the model definitions, so a read can be stale inside the TTL window. That is acceptable for analytics and explicitly not used on transactional paths.",
+      "tech": [
+        "Python",
+        "Django ORM",
+        "PostgreSQL",
+        "Redis"
+      ],
+      "diagram": "caching"
+    },
+    {
+      "title": "One identity across 30+ integrations",
+      "company": "LiveEasy",
+      "period": "2023 - 2026",
+      "problem": "Authentication was inconsistent across internal services and 30+ partner integrations including Verizon, MoxiWorks, Century 21 and Howard Hanna. There was no shared RBAC model, and each new service re-implemented login its own way.",
+      "approach": [
+        "Stood up a dedicated OAuth2 authentication microservice on Keycloak as the single issuer.",
+        "Extended Keycloak through custom SPIs, and patched it at source level where the SPI surface could not express the requirement.",
+        "Standardised SSO and role-based access across services, then took the design through internal security review before rollout."
+      ],
+      "metrics": [
+        {
+          "label": "Services on shared SSO",
+          "before": "ad hoc",
+          "after": "standardised",
+          "delta": ""
+        },
+        {
+          "label": "Security review",
+          "before": "—",
+          "after": "approved",
+          "delta": ""
+        }
+      ],
+      "tradeoff": "Source-level modification means carrying a patch set across Keycloak upgrades. The diff is documented and the version pinned, so upgrades are deliberate rather than automatic.",
+      "tech": [
+        "Keycloak",
+        "Java SPI",
+        "OAuth2",
+        "Docker",
+        "AWS"
+      ],
+      "diagram": "auth"
+    },
+    {
+      "title": "Cutting payment failures on a lending platform",
+      "company": "LendenClub",
+      "period": "2021 - 2023",
+      "problem": "Three in five payment attempts failed. On a peer-to-peer lending platform each failure is a stalled disbursement or repayment, so the failure rate was a direct business problem rather than a technical annoyance.",
+      "approach": [
+        "Built the PMI gateway interface as a single boundary in front of the payment providers, with strict REST contracts and input validation.",
+        "Added an end-to-end encrypted proxy so every financial call was auditable, with tracing through the full request path.",
+        "Retuned 10+ Celery background jobs, parallelising work and tuning concurrency to keep investor dashboards near real time."
+      ],
+      "metrics": [
+        {
+          "label": "Payment failure rate",
+          "before": "60%",
+          "after": "20%",
+          "delta": "-67%"
+        },
+        {
+          "label": "Job throughput",
+          "before": "baseline",
+          "after": "+40%",
+          "delta": "+40%"
+        }
+      ],
+      "tradeoff": "Routing every payment through one interface concentrates risk in that component, so it carries the strictest validation, tracing and audit logging in the codebase.",
+      "tech": [
+        "Python",
+        "Django",
+        "Celery",
+        "Redis",
+        "PostgreSQL"
+      ],
+      "diagram": "payments"
     }
   ]
 }

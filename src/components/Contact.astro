@@ -1,11 +1,14 @@
 ---
 import data from "../data.json";
 import Section from "./Section.astro";
+
+interface Props { index?: string }
+const { index = "01" } = Astro.props;
 ---
 
 <Section id="contact" className="relative max-w-4xl mx-auto text-center">
   <div class="mb-12 flex flex-col items-center">
-    <h2 class="section-heading">08 / Contact</h2>
+    <h2 class="section-heading">{index} / Contact</h2>
     <div class="mt-4 h-px w-28 bg-gradient-to-r from-transparent via-primary/40 to-transparent"></div>
   </div>
 
@@ -36,7 +39,7 @@ import Section from "./Section.astro";
     </div>
   </div>
 
-  <footer class="mt-20 border-t border-white/10 pt-8 text-sm text-muted">
+  <footer class="mt-20 border-t border-line pt-8 text-sm text-muted">
     <p>{data.hero?.title} (c) {new Date().getFullYear()} - All Rights Reserved</p>
   </footer>
 </Section>

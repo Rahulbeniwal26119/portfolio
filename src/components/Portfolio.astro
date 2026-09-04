@@ -2,6 +2,7 @@
 import data from "../data.json";
 import Hero from "./Hero.astro";
 import Experience from "./Experience.astro";
+import CaseStudies from "./CaseStudies.astro";
 import Projects from "./Projects.astro";
 import OpenSource from "./OpenSource.astro";
 import Writing from "./Writing.astro";
@@ -13,6 +14,14 @@ import ProjectModal from "./ProjectModal.astro";
 import ScrollToTop from "./ScrollToTop.astro";
 
 const { config } = data;
+
+// Numbers are derived from the sections that are actually enabled, so turning
+// one off renumbers the rest instead of leaving a gap in the sequence.
+const visibleSections = (config?.sectionOrder ?? []).filter(
+  (name: string) => config?.sections?.[name as keyof typeof config.sections],
+);
+const numberOf = (name: string) =>
+  String(visibleSections.indexOf(name) + 1).padStart(2, "0");
 ---
 
 <div
@@ -37,21 +46,23 @@ const { config } = data;
 
           switch (sectionName) {
             case "experience":
-              return <Experience />;
+              return <Experience index={numberOf("experience")} />;
+            case "caseStudies":
+              return <CaseStudies index={numberOf("caseStudies")} />;
             case "projects":
-              return <Projects />;
+              return <Projects index={numberOf("projects")} />;
             case "skills":
-              return <Skills />;
+              return <Skills index={numberOf("skills")} />;
             case "writing":
-              return <Writing />;
+              return <Writing index={numberOf("writing")} />;
             case "openSource":
-              return <OpenSource />;
+              return <OpenSource index={numberOf("openSource")} />;
             case "achievements":
-              return <Achievements />;
+              return <Achievements index={numberOf("achievements")} />;
             case "education":
-              return <Education />;
+              return <Education index={numberOf("education")} />;
             case "contact":
-              return <Contact />;
+              return <Contact index={numberOf("contact")} />;
             default:
               return null;
           }

@@ -2,42 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Palette and type are shared with takovibe.com. Warm greys plus one orange
+   accent; no cool blues, no glow gradients, no glass. Every utility below is
+   defined for both themes so the page is not dark-only. */
 @layer base {
   :root {
-    --color-primary: 96 165 250;
-    --color-background: 9 10 15;
-    --color-surface: 20 22 30;
-    --color-text: 248 250 252;
-    --color-muted: 148 163 184;
-    --color-accent: 45 212 191;
-    --color-soft: 30 41 59;
+    --color-primary: 234 88 12;      /* brand-600 - accent on light */
+    --color-accent: 194 65 12;       /* brand-700 - secondary accent */
+    --color-background: 250 250 249; /* warm off-white */
+    --color-surface: 255 255 255;
+    --color-text: 28 25 23;
+    --color-muted: 120 113 108;
+    --color-line: 231 229 228;
+    --color-soft: 245 245 244;
+  }
 
-    --shadow-soft: 0 18px 70px rgba(0, 0, 0, 0.34);
-    --shadow-hover: 0 26px 90px rgba(45, 212, 191, 0.12);
+  .dark {
+    --color-primary: 251 146 60;      /* brand-400 - accent on dark */
+    --color-accent: 253 186 116;      /* brand-300 */
+    --color-background: 12 10 9;
+    --color-surface: 28 25 23;
+    --color-text: 250 250 249;
+    --color-muted: 168 162 158;
+    --color-line: 41 37 36;
+    --color-soft: 28 25 23;
   }
 
   html {
     scroll-behavior: smooth;
-    color-scheme: dark;
     background-color: rgb(var(--color-background));
   }
 
   body {
-    @apply bg-background text-text transition-colors duration-300 font-sans antialiased;
-    background:
-      radial-gradient(circle at 10% 0%, rgba(45, 212, 191, 0.11), transparent 26rem),
-      radial-gradient(circle at 90% 8%, rgba(96, 165, 250, 0.13), transparent 30rem),
-      linear-gradient(180deg, rgba(255, 255, 255, 0.035) 0%, rgba(9, 10, 15, 0) 34rem),
-      rgb(var(--color-background));
+    @apply bg-background text-text font-sans antialiased transition-colors duration-300;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply font-heading font-bold;
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold tracking-tight;
+  }
+
+  code, kbd, pre, samp {
+    @apply font-mono;
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    @apply outline-none ring-2 ring-primary/60 ring-offset-2;
+    --tw-ring-offset-color: rgb(var(--color-background));
   }
 }
 
@@ -46,47 +57,49 @@
     text-wrap: balance;
   }
 
+  /* Kept under the original name so components need no changes. It is a plain
+     bordered card now: the blurred translucent panel read as dated and washed
+     out text over the page background. */
   .glass-panel {
-    @apply bg-surface/80 border border-white/10 shadow-[var(--shadow-soft)] rounded-lg backdrop-blur;
+    @apply rounded-lg border border-line bg-surface;
   }
 
   .glass-panel-hover {
-    @apply hover:-translate-y-1 hover:border-primary/30 hover:shadow-[var(--shadow-hover)] transition-all duration-300;
+    @apply transition-colors duration-200 hover:border-primary/40;
   }
 
   .section-heading {
-    @apply text-sm md:text-base font-semibold text-primary tracking-[0.16em] uppercase;
+    @apply text-xs md:text-sm font-semibold uppercase tracking-[0.18em] text-primary;
   }
 
   .section-rule {
-    @apply mt-4 h-px w-full bg-gradient-to-r from-primary/35 via-white/10 to-transparent;
+    @apply mt-4 h-px w-full bg-line;
   }
 
   .eyebrow {
-    @apply inline-flex items-center gap-2 rounded-full border border-primary/20 bg-white/5 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-primary shadow-sm backdrop-blur;
+    @apply inline-flex items-center gap-2 rounded-full border border-line bg-soft px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-primary;
   }
 
   .chip {
-    @apply rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-muted transition-colors duration-200 hover:border-primary/35 hover:text-primary;
+    @apply rounded-full border border-line bg-soft px-3 py-1 font-mono text-xs font-medium text-muted transition-colors duration-200 hover:border-primary/40 hover:text-primary;
   }
 
   .button-primary {
-    @apply inline-flex items-center justify-center rounded-full bg-text px-6 py-3 text-sm font-semibold text-background shadow-[0_14px_34px_rgba(0,0,0,0.28)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-primary;
+    @apply inline-flex items-center justify-center rounded-full bg-text px-6 py-3 text-sm font-semibold text-background transition-colors duration-200 hover:bg-primary;
   }
 
   .button-secondary {
-    @apply inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-text transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/35 hover:text-primary hover:shadow-md;
+    @apply inline-flex items-center justify-center rounded-full border border-line bg-surface px-6 py-3 text-sm font-semibold text-text transition-colors duration-200 hover:border-primary/40 hover:text-primary;
   }
 }
 
 ::selection {
-  background: rgba(96, 165, 250, 0.24);
+  background: rgb(var(--color-primary) / 0.22);
   color: rgb(var(--color-text));
 }
 
-/* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -94,8 +107,8 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(148, 163, 184, 0.28);
-  border-radius: 4px;
+  background: rgb(var(--color-muted) / 0.35);
+  border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {

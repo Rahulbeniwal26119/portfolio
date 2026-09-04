@@ -2,21 +2,53 @@
 import Portfolio from "../components/Portfolio.astro";
 import data from "../data.json";
 import "../styles/global.css";
+
+const name = data.hero?.title ?? "Rahul Beniwal";
+const tagline = data.hero?.subtitle ?? "";
+// Favicon: brand orange, matching takovibe.com, not the old purple.
+const initial = name.charAt(0) || "R";
+const favicon = `data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'><rect width='128' height='128' rx='28' fill='%23ea580c'/><text x='64' y='64' font-family='system-ui, sans-serif' font-weight='800' font-size='78' fill='white' text-anchor='middle' dominant-baseline='central'>${initial}</text></svg>`;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={`${data.hero?.title}'s Portfolio`} />
     <meta name="viewport" content="width=device-width" />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href={`data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'><circle cx='64' cy='64' r='64' fill='%238b5cf6'/><text x='64' y='64' font-family='system-ui, -apple-system, sans-serif' font-weight='900' font-size='84' fill='white' text-anchor='middle' dominant-baseline='central'>${data.hero?.title?.charAt(0) || "R"}</text><style>@media (prefers-color-scheme: dark) { circle { fill: %23a78bfa; } }</style></svg>`}
-    />
+    <title>{name} — Backend Engineer</title>
+    <meta name="description" content={tagline} />
     <meta name="generator" content={Astro.generator} />
-    <title>{data.hero?.title}</title>
+    <link rel="icon" type="image/svg+xml" href={favicon} />
+
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content={`${name} — Backend Engineer`} />
+    <meta property="og:description" content={tagline} />
+    <meta name="twitter:card" content="summary" />
+
+    <!-- Same three faces as takovibe.com, so both sites share one identity
+         (and a warm cache when a reader moves between them). -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    />
+
+    <script is:inline>
+      // Set the theme before first paint so there is no flash.
+      (() => {
+        try {
+          const saved = localStorage.getItem("theme");
+          const dark = saved
+            ? saved === "dark"
+            : window.matchMedia("(prefers-color-scheme: dark)").matches;
+          document.documentElement.classList.toggle("dark", dark);
+          document.documentElement.style.colorScheme = dark ? "dark" : "light";
+        } catch {
+          /* private mode: fall through to the light default */
+        }
+      })();
+    </script>
   </head>
   <body class="min-h-screen overflow-x-hidden">
     <main class="min-h-screen">

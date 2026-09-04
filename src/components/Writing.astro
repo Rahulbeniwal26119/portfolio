@@ -1,11 +1,14 @@
 ---
 import data from "../data.json";
 import Section from "./Section.astro";
+
+interface Props { index?: string }
+const { index = "01" } = Astro.props;
 ---
 
 <Section id="writing" className="relative max-w-7xl mx-auto">
     <div class="mb-16">
-        <h2 class="section-heading">04 / Writing</h2>
+        <h2 class="section-heading">{index} / Writing</h2>
         <div class="section-rule"></div>
     </div>
 
@@ -30,7 +33,7 @@ import Section from "./Section.astro";
             href={platform.url}
             target="_blank"
             rel="noopener noreferrer"
-            class="mt-auto group/btn flex items-center justify-between w-full pb-2 border-b border-white/10 hover:border-primary transition-colors"
+            class="mt-auto group/btn flex items-center justify-between w-full pb-2 border-b border-line hover:border-primary transition-colors"
           >
             <span class="text-sm font-semibold tracking-[0.08em] text-text group-hover/btn:text-primary transition-colors">Read</span>
             <svg class="w-4 h-4 text-muted group-hover/btn:text-primary group-hover/btn:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -41,6 +44,35 @@ import Section from "./Section.astro";
   </div>
 
   {
+    data.writing?.featured && (
+      <div class="mb-12">
+        <h3 class="mb-6 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+          Selected Writing
+        </h3>
+        <ul class="divide-y divide-line border-y border-line">
+          {data.writing.featured.map((article) => (
+            <li>
+              <a
+                href={article.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group flex flex-col gap-1 py-4 transition-colors sm:flex-row sm:items-baseline sm:justify-between sm:gap-6"
+              >
+                <span class="font-heading text-base font-semibold text-text transition-colors group-hover:text-primary">
+                  {article.title}
+                </span>
+                <span class="font-body text-sm text-muted sm:max-w-[22rem] sm:text-right">
+                  {article.note}
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )
+  }
+
+  {
     data.writing?.highlights && (
       <div class="glass-panel p-8 relative overflow-hidden group">
         <h3 class="text-sm font-semibold text-accent mb-6 uppercase tracking-[0.14em]">
@@ -49,7 +81,7 @@ import Section from "./Section.astro";
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           {data.writing.highlights.map((highlight) => (
-            <div class="flex items-start gap-3 rounded-lg border border-white/10 bg-white/5 p-3 transition-colors hover:border-primary/25">
+            <div class="flex items-start gap-3 rounded-lg border border-line bg-soft p-3 transition-colors hover:border-primary/25">
               <span class="mt-2 h-1.5 w-1.5 flex-none rounded-full bg-primary/70"></span>
               <span class="text-muted font-body text-sm leading-relaxed">{highlight}</span>
             </div>

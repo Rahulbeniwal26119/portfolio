@@ -1,11 +1,14 @@
 ---
 import data from "../data.json";
 import Section from "./Section.astro";
+
+interface Props { index?: string }
+const { index = "01" } = Astro.props;
 ---
 
 <Section id="achievements" className="relative max-w-7xl mx-auto">
   <div class="mb-16">
-      <h2 class="section-heading">06 / Achievements</h2>
+      <h2 class="section-heading">{index} / Achievements</h2>
       <div class="section-rule"></div>
   </div>
 

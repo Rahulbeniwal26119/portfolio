@@ -1,16 +1,19 @@
 ---
 import data from "../data.json";
 import Section from "./Section.astro";
+
+interface Props { index?: string }
+const { index = "01" } = Astro.props;
 ---
 
 <Section id="experience" className="relative max-w-5xl mx-auto">
     <div class="mb-16">
-        <h2 class="section-heading">01 / Experience</h2>
+        <h2 class="section-heading">{index} / Experience</h2>
         <div class="section-rule"></div>
     </div>
 
     <div class="relative pl-8 md:pl-12">
-        <div class="absolute left-[3px] top-2 bottom-2 w-px bg-white/10 md:left-4">
+        <div class="absolute left-[3px] top-2 bottom-2 w-px bg-soft md:left-4">
             <div class="absolute top-0 h-28 w-full bg-gradient-to-b from-primary/60 to-transparent"></div>
         </div>
 
@@ -36,7 +39,7 @@ import Section from "./Section.astro";
                             ) : (
                                 <span>{job.company}</span>
                             )}
-                            <span class="hidden md:inline text-white/25">/</span>
+                            <span class="hidden md:inline text-muted/50">/</span>
                             <span>{job.period}</span>
                         </div>
 

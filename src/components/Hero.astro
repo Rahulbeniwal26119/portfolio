@@ -48,9 +48,9 @@ const impactStats = [
       <a href="#contact" class="button-secondary">Contact</a>
     </div>
 
-    <div class="mt-16 grid w-full max-w-4xl grid-cols-1 overflow-hidden rounded-lg border border-white/10 bg-white/5 shadow-[var(--shadow-soft)] backdrop-blur md:grid-cols-3">
+    <div class="mt-16 grid w-full max-w-4xl grid-cols-1 overflow-hidden rounded-lg border border-line bg-soft shadow-[var(--shadow-soft)]  md:grid-cols-3">
       {impactStats.map((stat) => (
-        <div class="border-b border-white/10 px-6 py-5 last:border-b-0 md:border-b-0 md:border-r md:last:border-r-0">
+        <div class="border-b border-line px-6 py-5 last:border-b-0 md:border-b-0 md:border-r md:last:border-r-0">
           <div class="text-3xl font-semibold text-text">{stat.value}</div>
           <div class="mt-1 text-sm font-medium text-muted">{stat.label}</div>
         </div>
@@ -61,7 +61,7 @@ const impactStats = [
   <a
     href="#experience"
     aria-label="Scroll to experience"
-    class="absolute bottom-8 left-1/2 hidden -translate-x-1/2 rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-muted shadow-sm transition hover:text-primary md:inline-flex"
+    class="absolute bottom-8 left-1/2 hidden -translate-x-1/2 rounded-full border border-line bg-soft px-3 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-muted shadow-sm transition hover:text-primary md:inline-flex"
   >
     Scroll
   </a>
